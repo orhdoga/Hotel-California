@@ -31631,9 +31631,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-412a71b8", Component.options)
+    hotAPI.createRecord("data-v-eff3ea86", Component.options)
   } else {
-    hotAPI.reload("data-v-412a71b8", Component.options)
+    hotAPI.reload("data-v-eff3ea86", Component.options)
   }
 })()}
 
@@ -31718,7 +31718,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-412a71b8", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-eff3ea86", module.exports)
   }
 }
 

@@ -17,7 +17,7 @@ class AdministrationController extends Controller
     public function index(RoomCategory $roomCategories)
     {
         $roomCategories = RoomCategory::all(); 
-        
+    
         return view('administration.index', [
             'roomCategories' => $roomCategories,
         ]);
