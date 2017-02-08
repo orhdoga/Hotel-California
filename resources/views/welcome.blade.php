@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.welcome')
 
 @section('content')
 
@@ -16,15 +16,15 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="/images/Carousel-1.jpg" alt="Chania" width="460" height="345">
+            <img src="/images/Carousel-1.jpg" width="460" height="345">
         </div>
 
         <div class="item">
-            <img src="/images/Carousel-2.jpg" alt="Chania" width="460" height="345">
+            <img src="/images/Carousel-2.jpg" width="460" height="345">
         </div>
     
         <div class="item">
-            <img src="/images/Carousel-3.jpg" alt="Flower" width="460" height="345">
+            <img src="/images/Carousel-3.jpg" width="460" height="345">
         </div>
         
     </div>
