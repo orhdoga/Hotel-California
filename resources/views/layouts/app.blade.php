@@ -75,7 +75,7 @@
                 
                 @if(Auth::user())    
                     <ul class="nav navbar-nav pull-left">
-                        <li class="subsytem {{is_current_page('/administration') ? 'active' : ''}}"><a href="/administration"><b>Room administration</b></a></li>
+                        <!--<li class="subsytem {{is_current_page('/administration') ? 'active' : ''}}"><a href="/administration"><b>Room administration</b></a></li>-->
                         <li class="subsytem {{is_current_page('/pricing') ? 'active' : ''}}"><a href="/pricing"><b>Pricing</b></a></li>
                         <li class="subsytem"><a href="#"><b>Web reservation</b></a></li>
                         <li class="subsytem"><a href="#"><b>Front desk</b></a></li>
