@@ -18,7 +18,7 @@ class AdministrationController extends Controller
     {
         $roomCategories = RoomCategory::all(); 
     
-        return view('administration.index', [
+        return view('administration.roomCategory.index', [
             'roomCategories' => $roomCategories,
         ]);
         
@@ -76,7 +76,7 @@ class AdministrationController extends Controller
      */
     public function edit(roomCategory $roomCategory)
     {
-        return view('administration.edit', [
+        return view('administration.roomCategory.edit', [
             'roomCategory' => $roomCategory,    
         ]);
     }
@@ -91,7 +91,7 @@ class AdministrationController extends Controller
     public function update(Request $request, RoomCategory $roomCategory)
     {
         $this->validate($request, [
-            'name' => 'required|unique:room_categories|max:30',
+            'name' => 'required|max:30',
         ]);
         
         $roomCategory->update($request->all());

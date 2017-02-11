@@ -13,17 +13,28 @@
 
 Auth::routes();
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::group(['middleware' => ['auth']], function () {
     
-    Route::get('/', function () {
-        return view('welcome');
+    Route::group(['prefix' => 'administration'], function () {
+    
+        Route::get('/', 'AdministrationController@index');
+        Route::post('/', 'AdministrationController@store');
+        Route::get('/{roomCategory}', 'AdministrationController@edit');
+        Route::patch('/{roomCategory}', 'AdministrationController@update');
+        Route::delete('/{roomCategory}', 'AdministrationController@destroy');
+        
     });
     
-    Route::get('/administration', 'AdministrationController@index');
-    Route::post('/administration', 'AdministrationController@store');
-    Route::get('/administration/{roomCategory}', 'AdministrationController@edit');
-    Route::patch('/administration/{roomCategory}', 'AdministrationController@update');
-    Route::delete('/administration/{roomCategory}', 'AdministrationController@destroy');
+    Route::group(['prefix' => 'rooms'], function () { 
+       
+       Route::get('/', 'RoomController@index'); 
+        
+    });
+    
     Route::get('/pricing', 'PricingController@index');
 
 });
