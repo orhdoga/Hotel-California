@@ -15,7 +15,6 @@
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     height: 30px;
     margin-top: 11px;
-    display: flex;
     align-items: center;
     border-radius: 10px;
 }
@@ -23,7 +22,6 @@
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     height: 30px;
     margin-top: 11px;
-    display: flex;
     align-items: center;
     border-radius: 10px;     
 }    
@@ -40,4 +38,10 @@
     border-top-right-radius: 0;
     border-top-left-radius: 0;
     border-radius: 10px;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #fec503;
+    color: #fff;
+    line-height: 0.8px;
 }
