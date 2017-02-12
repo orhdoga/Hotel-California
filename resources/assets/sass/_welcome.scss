@@ -34,3 +34,10 @@
     height: 500px;
     line-height: 1;
 }
+
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-radius: 10px;
+}

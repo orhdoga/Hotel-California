@@ -75,7 +75,13 @@
                 
                 @if(Auth::user())    
                     <ul class="nav navbar-nav pull-left">
-                        <!--<li class="subsytem {{is_current_page('/administration') ? 'active' : ''}}"><a href="/administration"><b>Room administration</b></a></li>-->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle subsytem" data-toggle="dropdown"><b>Room administration</b> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="subsytem {{is_current_page('/administration') ? 'active' : ''}}"><a href="/administration">Room categories</a></li>
+                                <li class="subsytem {{is_current_page('/rooms') ? 'active' : ''}}"><a href="/rooms">Rooms</a></li>
+                            </ul>
+                        </li>
                         <li class="subsytem {{is_current_page('/pricing') ? 'active' : ''}}"><a href="/pricing"><b>Pricing</b></a></li>
                         <li class="subsytem"><a href="#"><b>Web reservation</b></a></li>
                         <li class="subsytem"><a href="#"><b>Front desk</b></a></li>
@@ -115,8 +121,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 </body>
 </html>
