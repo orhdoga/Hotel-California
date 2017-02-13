@@ -8,7 +8,7 @@
         
         <div class="col-md-6">
             
-            <form method="POST" action="/administration/{{ $roomCategory->id }}">
+            <form method="POST" action="/roomcategories/{{ $roomCategory->id }}">
                 {{ method_field('PATCH') }}
                 {{ csrf_field() }}
                 <div class="form-group well">

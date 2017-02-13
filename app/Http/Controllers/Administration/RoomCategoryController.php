@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Administration;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use DB;
 use App\RoomCategory;
 
-class AdministrationController extends Controller
+class RoomCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +21,6 @@ class AdministrationController extends Controller
         return view('administration.roomCategory.index', [
             'roomCategories' => $roomCategories,
         ]);
-        
-        // return view('administration.index', compact('roomCategories'));
     }
 
     /**
@@ -41,19 +39,19 @@ class AdministrationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, RoomCategory $roomCategories)
+    public function store(Request $request, RoomCategory $roomCategory)
     {
         $this->validate($request, [
             'name' => 'required|unique:room_categories|max:30',
         ]);
         
-        $roomCategories->fill($request->all());
+        $roomCategory->fill($request->all());
         
-        $roomCategories->save();
+        $roomCategory->save();
         
-        flash(e('You have successfully created ' . $roomCategories->name), 'success');
+        flash(e('You have successfully created ' . $roomCategory->name), 'success');
         
-        return redirect('/administration');
+        return redirect('/roomcategories');
     }
 
     /**
@@ -98,7 +96,7 @@ class AdministrationController extends Controller
         
         flash(e('You have successfully updated ' . $roomCategory->name), 'info');
         
-        return redirect('/administration');
+        return redirect('/roomcategories');
     }
 
     /**
@@ -113,6 +111,6 @@ class AdministrationController extends Controller
         
         flash(e('You have successfully deleted ' . $roomCategory->name), 'danger');
         
-        return redirect('/administration');
+        return redirect('/roomcategories');
     }
 }

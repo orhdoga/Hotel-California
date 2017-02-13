@@ -25,7 +25,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-inverse static-fixed-top">
+        <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -78,7 +78,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle subsytem" data-toggle="dropdown"><b>Room administration</b> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li class="subsytem {{is_current_page('/administration') ? 'active' : ''}}"><a href="/administration">Room categories</a></li>
+                                <li class="subsytem {{is_current_page('/roomcategories') ? 'active' : ''}}"><a href="/roomcategorie">Room categories</a></li>
                                 <li class="subsytem {{is_current_page('/rooms') ? 'active' : ''}}"><a href="/rooms">Rooms</a></li>
                             </ul>
                         </li>

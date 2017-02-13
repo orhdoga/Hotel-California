@@ -8,14 +8,21 @@
         
         <div class="col-md-6">
             
-            <form method="POST" action="/administration">
+            <form method="POST" action="/roomcategories">
+                
                 {{ csrf_field() }}
-                <div class="form-group well">
-                    <label for="roomCategory">Add room category</label>
-                    <input id="roomCategory" type="text" name="name" class="form-control" placeholder="Enter a new room category">
-                    <br>
+                
+                <div class="well">
+                
+                    <div class="form-group">
+                        <label for="roomCategory">Add room category</label>
+                        <input id="roomCategory" type="text" name="name" class="form-control" placeholder="Enter a new room category">
+                    </div> 
+                    
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
+                    
+                </div>    
+                    
             </form>
             
         </div>
@@ -34,11 +41,11 @@
                     @foreach($roomCategories as $roomCategory)
                         <tr>
                             <td style="padding-top: 15px;">
-                                <a href="{{ url('/administration/' . $roomCategory->id) }}">{{ $roomCategory->name }}</a>
+                                <a href="{{ url('/roomcategories/' . $roomCategory->id) }}">{{ $roomCategory->name }}</a>
                             </td>
                             <td>
                                 <div class="pull-right">
-                                    <form method="POST" action="{{ url('/administration/' . $roomCategory->id) }}">
+                                    <form method="POST" action="{{ url('/roomcategories/' . $roomCategory->id) }}">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         <input type="submit" class="btn btn-danger" value="Delete">

@@ -19,20 +19,25 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth']], function () {
     
-    Route::group(['prefix' => 'administration'], function () {
+    Route::group(['prefix' => 'roomcategories'], function () {
     
-        Route::get('/', 'AdministrationController@index');
-        Route::post('/', 'AdministrationController@store');
-        Route::get('/{roomCategory}', 'AdministrationController@edit');
-        Route::patch('/{roomCategory}', 'AdministrationController@update');
-        Route::delete('/{roomCategory}', 'AdministrationController@destroy');
+        Route::get('/', 'Administration\RoomCategoryController@index');
+        Route::post('/', 'Administration\RoomCategoryController@store');
+        Route::get('/{roomCategory}', 'Administration\RoomCategoryController@edit');
+        Route::patch('/{roomCategory}', 'Administration\RoomCategoryController@update');
+        Route::delete('/{roomCategory}', 'Administration\RoomCategoryController@destroy');
         
     });
     
     Route::group(['prefix' => 'rooms'], function () { 
        
-       Route::get('/', 'RoomController@index'); 
-        
+       Route::get('/', 'Administration\RoomController@index'); 
+       Route::get('/create', 'Administration\RoomController@create');
+       Route::post('/', 'Administration\RoomController@store');
+       Route::get('/{room}/edit', 'Administration\RoomController@edit');
+       Route::patch('/{room}', 'Administration\RoomController@update');
+       Route::delete('/{room}', 'Administration\RoomController@destroy');
+       
     });
     
     Route::get('/pricing', 'PricingController@index');

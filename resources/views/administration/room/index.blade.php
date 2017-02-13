@@ -11,7 +11,9 @@
         </div>
         
         <div class="pull-right">
-            <h1><a href="#">Create</a></h1>
+            <a href="/rooms/create">
+                <h1>Create</h1>
+            </a>
         </div>
     
     </div>
@@ -28,14 +30,26 @@
                 <th>Room</th>
                 <th>Room category</th>
                 <th>Room plan</th>
+                <th></th>
             </tr>
         </thead>
         
         <tbody>
             @foreach($rooms as $room)
                 <tr>
-                    <td>{{ $room->id }}</td>
-                    <td>{{ $room->name }}</td>
+                    <td style="padding-top: 15px;">{{ $room->id }}</td>
+                    <td style="padding-top: 15px;"><a href="{{ url('/rooms/' . $room->id . '/edit') }}">{{ $room->name }}</a></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="pull-right">
+                            <form method="POST" action="{{ url('/rooms/' . $room->id) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <input type="submit" class="btn btn-danger" value="Delete">
+                            </form>  
+                        </div>    
+                    </td>
                 </tr>
             @endforeach
         </tbody>
