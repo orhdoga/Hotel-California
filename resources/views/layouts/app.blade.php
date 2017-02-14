@@ -78,7 +78,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle subsytem" data-toggle="dropdown"><b>Room administration</b> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li class="subsytem {{is_current_page('/roomcategories') ? 'active' : ''}}"><a href="/roomcategorie">Room categories</a></li>
+                                <li class="subsytem {{is_current_page('/roomcategories') ? 'active' : ''}}"><a href="/roomcategories">Room categories</a></li>
                                 <li class="subsytem {{is_current_page('/rooms') ? 'active' : ''}}"><a href="/rooms">Rooms</a></li>
                             </ul>
                         </li>
@@ -121,6 +121,8 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 </body>
 </html>

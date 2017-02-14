@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Room;
+use App\RoomCategory;
 
 class RoomController extends Controller
 {
@@ -14,12 +15,14 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Room $room)
+    public function index(Room $room, RoomCategory $roomCategories)
     {
         $rooms = Room::all();
+        $roomCategories = RoomCategory::all();
         
         return view('administration.room.index', [
             'rooms' => $rooms,     
+            'room_categories' => $roomCategories,
         ]);
     }
 
@@ -28,9 +31,13 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(RoomCategory $roomCategories)
     {
-        return view('administration.room.form');
+        $roomCategories = RoomCategory::all();
+        
+        return view('administration.room.form', [
+            'room_categories' => $roomCategories,    
+        ]);
     }
 
     /**
@@ -41,9 +48,18 @@ class RoomController extends Controller
      */
     public function store(Request $request, Room $room)
     {
+        $this->validate($request, [
+            'name' => 'required|unique:room_categories|max:30',
+            'room_category_id' => 'required',
+        ]);
+        
         $room->fill($request->all());
         
         $room->save();
+        
+        dd($request);
+        
+        flash(e('You have successfully created ' . $room->name), 'success');
         
         return redirect('/rooms');
     }
@@ -65,10 +81,13 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Room $room)
+    public function edit(Room $room, RoomCategory $roomCategories)
     {
+        $roomCategories = RoomCategory::all();
+        
         return view('administration.room.form', [
             'room' => $room,
+            'room_categories' => $roomCategories,
         ]);
     }
 
@@ -81,7 +100,14 @@ class RoomController extends Controller
      */
     public function update(Request $request, Room $room)
     {
+        $this->validate($request, [
+            'name' => 'required|unique:room_categories|max:30',
+            'room_category_id' => 'required',
+        ]);
+        
         $room->update($request->all());
+        
+        flash(e('You have successfully updated ' . $room->name), 'info');
         
         return redirect('/rooms');
     }
@@ -95,6 +121,8 @@ class RoomController extends Controller
     public function destroy(Room $room)
     {
         $room->delete();
+        
+        flash(e('You have successfully deleted ' . $room->name), 'danger');
         
         return back();
     }

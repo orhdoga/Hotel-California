@@ -24,6 +24,21 @@
                             <input id="name" type="text" name="name" class="form-control" placeholder="Enter a new room name" 
                             value="{{ isset($room) ? $room->name : '' }}">
                         </div>
+                        
+                        <div class="form-group">
+                            <label>Attach room category</label>                            
+                            <select class="form-control" name="room_category_id">
+                                    <option style="display: none" value="">Attach a room category to a room</option>
+                                        @foreach($room_categories as $room_category)
+                                            <option value="{{ $room_category->id }}">{{ $room_category->name }}</option>
+                                        @endforeach    
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Add a room plan to a room</label>
+                            <input type="file" name="room_plan">
+                        </div>
                       
                         <button type="submit" class="btn btn-primary">{{ isset($room) ? 'Update' : 'Submit' }}</button>
                     
