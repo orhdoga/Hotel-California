@@ -19,16 +19,16 @@ class RoomsTableSeeder extends Seeder
         $example->room_plan = "Draven.jpg";
         $example->save();
         
-        $example = new Room;
-        $example->name = "Example";
-        $example->room_category_id = "1";
-        $example->room_plan = "Draven.jpg";
-        $example->save();
+        $example1 = new Room;
+        $example1->name = "Example1";
+        $example1->room_category_id = "1";
+        $example1->room_plan = "Draven.jpg";
+        $example1->save();
         
-        $example = new Room;
-        $example->name = "Example";
-        $example->room_category_id = "1";
-        $example->room_plan = "Draven.jpg";
-        $example->save();
+        $example2 = new Room;
+        $example2->name = "Example2";
+        $example2->room_category_id = "1";
+        $example2->room_plan = "Draven.jpg";
+        $example2->save();
     }
 }

@@ -15,14 +15,12 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Room $room, RoomCategory $roomCategories)
+    public function index(Room $room)
     {
-        $rooms = Room::all();
-        $roomCategories = RoomCategory::all();
+        $rooms = Room::paginate(15);
         
         return view('administration.room.index', [
-            'rooms' => $rooms,     
-            'room_categories' => $roomCategories,
+            'rooms' => $rooms,
         ]);
     }
 
@@ -51,11 +49,15 @@ class RoomController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:room_categories|max:30',
             'room_category_id' => 'required',
+            'room_plan' => 'required',
         ]);
         
-        $room->fill($request->all());
+        Room::create([
+            'name' => $request->input('name'),
+            'room_category_id' => $request->input('room_category_id'),
+        ]);
+
         
-        $room->save();
         
         dd($request);
         

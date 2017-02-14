@@ -56,6 +56,10 @@
                 
     </table>
     
+<div class="pull-right">
+    {{ $rooms->links() }}
+</div>
+    
 </div>
 
 @endsection
