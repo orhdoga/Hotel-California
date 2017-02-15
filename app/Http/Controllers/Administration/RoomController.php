@@ -53,10 +53,9 @@ class RoomController extends Controller
             'room_plan' => 'required',
         ]);
         
-        Room::create([
-            'name' => $request->input('name'),
-            'room_category_id' => $request->input('room_category_id'),
-        ]);
+        $room = new Room;
+        $room->name = $request->name;
+        $room->room_category_id = $request->room_category_id;
         
         if($request->hasFile('room_plan')) {
             $room_plan = $request->file('room_plan');
@@ -65,6 +64,8 @@ class RoomController extends Controller
             Image::make($room_plan)->resize(120, 120)->save($location);
             $room->room_plan = $filename;
         }
+        
+        $room->save();
         
         flash(e('You have successfully created ' . $room->name), 'success');
         
@@ -113,6 +114,16 @@ class RoomController extends Controller
         ]);
         
         $room->update($request->all());
+        
+        if($request->hasFile('room_plan')) {
+            $room_plan = $request->file('room_plan');
+            $filename = time() . '.' . $room_plan->getClientOriginalExtension();
+            $location = public_path('/images/' . $filename);
+            Image::make($room_plan)->resize(120, 120)->save($location);
+            $room->room_plan = $filename;
+        }
+        
+        $room->save();
         
         flash(e('You have successfully updated ' . $room->name), 'info');
         

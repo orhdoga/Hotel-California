@@ -40,6 +40,10 @@ Route::group(['middleware' => ['auth']], function () {
        
     });
     
+    Route::get('/phpinfo', function() {
+        return phpinfo();
+    });
+    
     Route::get('/pricing', 'PricingController@index');
 
 });
