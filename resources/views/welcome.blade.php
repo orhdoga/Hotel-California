@@ -87,16 +87,4 @@
 
 </div>
 
-<div class="container">
-    
-    <a href="#"><i class="fa fa-facebook-square fa-3x social"></i></a>
-    &nbsp;
-    <a href="#"><i class="fa fa-twitter-square fa-3x social"></i></a>
-    &nbsp;    
-    <a href="#"><i class="fa fa-google-plus-square fa-3x social"></i></a>
-    &nbsp;    
-    <a href="#"><i class="fa fa-envelope-square fa-3x social"></i></a>
-    
-</div>
-
 @endsection

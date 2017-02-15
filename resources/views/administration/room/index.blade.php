@@ -39,7 +39,7 @@
                 <tr>
                     <td style="padding-top: 15px;">{{ $room->id }}</td>
                     <td style="padding-top: 15px;"><a href="{{ url('/rooms/' . $room->id . '/edit') }}">{{ $room->name }}</a></td>
-                    <td style="padding-top: 15px;">{{ $room->room_category_id }}</td>
+                    <td style="padding-top: 15px;">{{ $room->room_category->name }}</td>
                     <td><img src="{{ '/images/' . $room->room_plan }}" style="height: 120px; width: 120px;"></td>
                     <td>
                         <div class="pull-right">

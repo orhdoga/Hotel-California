@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Room;
 use App\RoomCategory;
+use Image;
 
 class RoomController extends Controller
 {
@@ -17,7 +18,7 @@ class RoomController extends Controller
      */
     public function index(Room $room)
     {
-        $rooms = Room::paginate(15);
+        $rooms = Room::with('room_category')->paginate(15);
         
         return view('administration.room.index', [
             'rooms' => $rooms,
@@ -56,10 +57,14 @@ class RoomController extends Controller
             'name' => $request->input('name'),
             'room_category_id' => $request->input('room_category_id'),
         ]);
-
         
-        
-        dd($request);
+        if($request->hasFile('room_plan')) {
+            $room_plan = $request->file('room_plan');
+            $filename = time() . '.' . $room_plan->getClientOriginalExtension();
+            $location = public_path('/images/' . $filename);
+            Image::make($room_plan)->resize(120, 120)->save($location);
+            $room->room_plan = $filename;
+        }
         
         flash(e('You have successfully created ' . $room->name), 'success');
         

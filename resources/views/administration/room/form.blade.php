@@ -9,10 +9,10 @@
         <div class="col-md-6">
         
             @if(isset($room))
-                <form method="POST" action="{{ url('/rooms/' . $room->id) }}">
+                <form method="POST" action="{{ url('/rooms/' . $room->id) }}" enctype="multipart/form-data">
                 {{ method_field('PATCH') }}        
             @else
-                <form method="POST" action="{{ url('/rooms') }}">
+                <form method="POST" action="{{ url('/rooms') }}" enctype="multipart/form-data">
             @endif    
                 
                     {{ csrf_field() }}
