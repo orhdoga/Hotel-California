@@ -8,7 +8,7 @@
         
         <div class="col-md-6">
             
-            @if(isset($room_categorie))
+            @if(isset($room_category))
                 <form method="POST" action="{{ url('/roomcategories/' . $room_category->id) }}">
                     {{ method_field('PATCH') }}
             @else

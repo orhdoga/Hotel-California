@@ -14,12 +14,12 @@ class RoomCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(RoomCategory $roomCategories)
+    public function index(RoomCategory $room_category)
     {
-        $roomCategories = RoomCategory::all(); 
+        $room_category = RoomCategory::all(); 
     
         return view('administration.roomCategory.index', [
-            'room_categories' => $roomCategories,
+            'room_categories' => $room_category,
         ]);
     }
 
@@ -39,17 +39,27 @@ class RoomCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, RoomCategory $roomCategory)
+    public function store(Request $request, RoomCategory $room_category)
     {
         $this->validate($request, [
             'name' => 'required|unique:room_categories|max:30',
+            'description' => 'required',
+            'cover_image' => 'required',
         ]);
         
-        $roomCategory->fill($request->all());
+        $room_category->fill($request->all());
         
-        $roomCategory->save();
+        if($request->hasFile('cover_image')) {
+            $cover_image = $request->file('cover_image');
+            $filename = time() . '.' . $cover_image->getClientOriginalExtension();
+            $location = public_path('/images/' . $filename);
+            Image::make($cover_image)->resize(120, 120)->save($location);
+            $room_category->cover_image = $filename;
+        }
         
-        flash(e('You have successfully created ' . $roomCategory->name), 'success');
+        $room_category->save();
+        
+        flash(e('You have successfully created ' . $room_category->name), 'success');
         
         return redirect('/roomcategories');
     }
@@ -72,10 +82,10 @@ class RoomCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(roomCategory $roomCategory)
+    public function edit(RoomCategory $room_category)
     {
         return view('administration.roomCategory.form', [
-            'roomCategory' => $roomCategory,    
+            'room_category' => $room_category,    
         ]);
     }
 
@@ -86,15 +96,27 @@ class RoomCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RoomCategory $roomCategory)
+    public function update(Request $request, RoomCategory $room_category)
     {
         $this->validate($request, [
             'name' => 'required|max:30',
+            'description' => 'required',
+            'cover_image' => 'required',
         ]);
         
-        $roomCategory->update($request->all());
+        $room_category->update($request->all());
         
-        flash(e('You have successfully updated ' . $roomCategory->name), 'info');
+        if($request->hasFile('cover_image')) {
+            $cover_image = $request->file('cover_image');
+            $filename = time() . '.' . $cover_image->getClientOriginalExtension();
+            $location = public_path('/images/' . $filename);
+            Image::make($cover_image)->resize(120, 120)->save($location);
+            $room_category->cover_image = $filename;
+        }
+        
+        $room_category->save();
+        
+        flash(e('You have successfully updated ' . $room_category->name), 'info');
         
         return redirect('/roomcategories');
     }
@@ -105,11 +127,11 @@ class RoomCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RoomCategory $roomCategory)
+    public function destroy(RoomCategory $room_category)
     {
-        $roomCategory->delete();
+        $room_category->delete();
         
-        flash(e('You have successfully deleted ' . $roomCategory->name), 'danger');
+        flash(e('You have successfully deleted ' . $room_category->name), 'danger');
         
         return redirect('/roomcategories');
     }
