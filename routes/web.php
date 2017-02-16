@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
        Route::get('/', 'Administration\RoomController@index'); 
        Route::get('/create', 'Administration\RoomController@create');
        Route::post('/', 'Administration\RoomController@store');
+       Route::get('/{room}', 'Administration\RoomController@show');       
        Route::get('/{room}/edit', 'Administration\RoomController@edit');
        Route::patch('/{room}', 'Administration\RoomController@update');
        Route::delete('/{room}', 'Administration\RoomController@destroy');

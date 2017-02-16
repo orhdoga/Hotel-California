@@ -6,6 +6,26 @@
     
     <div class="row">
         
+        <div class="col-md-12">
+            
+            @if(isset($room))
+                <h1>Room edit</h1>
+            @else
+                <h1>Room create</h1>
+            @endif    
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+<br>
+
+<div class="container">
+    
+    <div class="row">
+        
         <div class="col-md-6">
         
             @if(isset($room))
@@ -20,13 +40,13 @@
                     <div class="well">
                         
                         <div class="form-group">
-                            <label for="name">Add room name</label>
-                            <input id="name" type="text" name="name" class="form-control" placeholder="Enter a new room name" 
+                            <label for="name">Room</label>
+                            <input id="name" type="text" name="name" class="form-control" placeholder="Enter a name" 
                             value="{{ isset($room) ? $room->name : '' }}">
                         </div>
                         
                         <div class="form-group">
-                            <label>Attach room category</label>                            
+                            <label>Room category</label>                            
                             <select class="form-control" name="room_category_id">
                                     <option style="display: none" value="">Attach a room category to a room</option>
                                         @foreach($room_categories as $room_category)

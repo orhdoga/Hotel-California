@@ -18,7 +18,7 @@ class RoomController extends Controller
      */
     public function index(Room $room)
     {
-        $rooms = Room::with('room_category')->paginate(15);
+        $rooms = Room::paginate(15);
         
         return view('administration.room.index', [
             'rooms' => $rooms,
@@ -78,9 +78,11 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Room $room)
     {
-        //
+        return view('administration.room.show', [
+            'room' => $room,    
+        ]);
     }
 
     /**
