@@ -42,8 +42,10 @@ class RoomCategoryController extends Controller
     public function store(Request $request, RoomCategory $room_category)
     {
         $this->validate($request, [
-            'name' => 'required|unique:room_categories|max:30',
+            'name' => 'required|max:30',
             'description' => 'required',
+            'amount_of_persons' => 'required',
+            'price' => 'required',
             'cover_image' => 'required',
         ]);
         
@@ -101,6 +103,8 @@ class RoomCategoryController extends Controller
         $this->validate($request, [
             'name' => 'required|max:30',
             'description' => 'required',
+            'amount_of_persons' => 'required',
+            'price' => 'required',
             'cover_image' => 'required',
         ]);
         

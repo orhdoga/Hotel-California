@@ -9,8 +9,8 @@ class RoomCategory extends Model
     protected $fillable = [
         'name',
         'description',
-        'cover_image',
         'price',
         'amount_of_persons',
+        'cover_image',        
     ];
 }

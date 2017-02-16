@@ -31,6 +31,17 @@
                     </div>
                     
                     <div class="form-group">
+                        <label for="amount_of_persons">Add amount of persons to room category</label>
+                        <input id="amount_of_persons" type="text" class="form-control" name="amount_of_persons" placeholder="E.g. 6" style="width: 65px;" value="{{ isset($room_category) ? $room_category->amount_of_persons : '' }}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="price">Add price (per night) to room category</label>
+                        <input id="price" type="text" class="form-control" name="price" placeholder="E.g. €50,0" style="width: 95px;" value="{{ isset($room_category) ? $room_category->price : '' }}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Add cover image to room category</label>
                         <input type="file" name="cover_image">
                     </div>
                     

@@ -29,9 +29,9 @@
                 <th>Id</th>
                 <th>Room category</th>
                 <th>Description</th>
-                <th>Cover image</th>
-                <th>Persons</th>                
-                <th>Price (per ?)</th>
+                <th>Persons</th>  
+                <th>Cover image</th>                
+                <th>Price</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -44,8 +44,8 @@
                         <a href="{{ url('/roomcategories/' . $room_category->id . '/edit') }}">{{ $room_category->name }}</a>
                     </td>
                     <td style="padding-top: 15px;">{{ $room_category->description }}</td>
+                    <td style="padding-top: 15px;">Test</td>                    
                     <td><img src="{{ '/images/' . $room_category->cover_image }}" style="height: 120px; width: 120px;"></td>
-                    <td>Test</td>                    
                     <td style="padding-top: 15px;">{{ $room_category->price }}</td>
                     <td>
                         <div class="pull-right">
