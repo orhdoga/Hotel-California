@@ -10,7 +10,7 @@
         
             @if(isset($room))
                 <form method="POST" action="{{ url('/rooms/' . $room->id) }}" enctype="multipart/form-data">
-                {{ method_field('PATCH') }}        
+                    {{ method_field('PATCH') }}        
             @else
                 <form method="POST" action="{{ url('/rooms') }}" enctype="multipart/form-data">
             @endif    

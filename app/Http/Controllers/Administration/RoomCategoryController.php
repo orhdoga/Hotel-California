@@ -19,7 +19,7 @@ class RoomCategoryController extends Controller
         $roomCategories = RoomCategory::all(); 
     
         return view('administration.roomCategory.index', [
-            'roomCategories' => $roomCategories,
+            'room_categories' => $roomCategories,
         ]);
     }
 
@@ -30,7 +30,7 @@ class RoomCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('administration.roomCategory.form');
     }
 
     /**
@@ -74,7 +74,7 @@ class RoomCategoryController extends Controller
      */
     public function edit(roomCategory $roomCategory)
     {
-        return view('administration.roomCategory.edit', [
+        return view('administration.roomCategory.form', [
             'roomCategory' => $roomCategory,    
         ]);
     }

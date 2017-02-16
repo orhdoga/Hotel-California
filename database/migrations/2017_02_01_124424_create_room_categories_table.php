@@ -16,6 +16,8 @@ class CreateRoomCategoriesTable extends Migration
         Schema::create('room_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
+            $table->text('description')->nullable();
+            $table->string('cover_image')->nullable();
             $table->timestamps();
         });
     }

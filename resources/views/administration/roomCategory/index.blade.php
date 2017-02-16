@@ -5,62 +5,57 @@
 <div class="container">
     
     <div class="row">
-        
-        <div class="col-md-6">
             
-            <form method="POST" action="/roomcategories">
-                
-                {{ csrf_field() }}
-                
-                <div class="well">
-                
-                    <div class="form-group">
-                        <label for="roomCategory">Add room category</label>
-                        <input id="roomCategory" type="text" name="name" class="form-control" placeholder="Enter a new room category">
-                    </div> 
-                    
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    
-                </div>    
-                    
-            </form>
-            
+        <div class="col-md-6">    
+            <h1>Room categories overview</h1>
         </div>
         
-        <div class="col-md-6">
-            
-            <table class="table table-hover">
-                
-                <thead>
-                    <tr>
-                        <th>Room category</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($roomCategories as $roomCategory)
-                        <tr>
-                            <td style="padding-top: 15px;">
-                                <a href="{{ url('/roomcategories/' . $roomCategory->id) }}">{{ $roomCategory->name }}</a>
-                            </td>
-                            <td>
-                                <div class="pull-right">
-                                    <form method="POST" action="{{ url('/roomcategories/' . $roomCategory->id) }}">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
-                                        <input type="submit" class="btn btn-danger" value="Delete">
-                                    </form>
-                                </div> 
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-                
-            </table>
-            
+        <div class="pull-right">
+            <a href="/roomcategories/create">
+                <h1>Create</h1>
+            </a>
         </div>
-        
+    
     </div>
+    
+</div>
+
+<div class="container">
+            
+    <table class="table table-hover">
+        
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Room category</th>
+                <th>Description</th>
+                <th>Cover image</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($room_categories as $room_category)
+                <tr>
+                    <td style="padding-top: 15px;">{{ $room_category->id }}</td>
+                    <td style="padding-top: 15px;">
+                        <a href="{{ url('/roomcategories/' . $room_category->id . '/edit') }}">{{ $room_category->name }}</a>
+                    </td>
+                    <td style="padding-top: 15px;">{{ $room_category->description }}</td>
+                    <td><img src="{{ '/images/' . $room_category->cover_image }}" style="height: 120px; width: 120px;"></td>
+                    <td>
+                        <div class="pull-right">
+                            <form method="POST" action="{{ url('/roomcategories/' . $room_category->id) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <input type="submit" class="btn btn-danger" value="Delete">
+                            </form>
+                        </div> 
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+        
+    </table>
     
 </div>
 

@@ -15,6 +15,8 @@ class RoomCategoriesTableSeeder extends Seeder
     {
         $example = new Roomcategory;
         $example->name = "Example";
+        $example->description = "Working at Burger King";
+        $example->cover_image = "Draven.jpg"; 
         $example->save();
     }
 }

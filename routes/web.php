@@ -17,13 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/phpinfo', function() {
+    return phpinfo();
+});
+
 Route::group(['middleware' => ['auth']], function () {
     
     Route::group(['prefix' => 'roomcategories'], function () {
     
         Route::get('/', 'Administration\RoomCategoryController@index');
+        Route::get('/create', 'Administration\RoomCategoryController@create');
         Route::post('/', 'Administration\RoomCategoryController@store');
-        Route::get('/{roomCategory}', 'Administration\RoomCategoryController@edit');
+        Route::get('/{roomCategory}/edit', 'Administration\RoomCategoryController@edit');
         Route::patch('/{roomCategory}', 'Administration\RoomCategoryController@update');
         Route::delete('/{roomCategory}', 'Administration\RoomCategoryController@destroy');
         
@@ -38,10 +43,6 @@ Route::group(['middleware' => ['auth']], function () {
        Route::patch('/{room}', 'Administration\RoomController@update');
        Route::delete('/{room}', 'Administration\RoomController@destroy');
        
-    });
-    
-    Route::get('/phpinfo', function() {
-        return phpinfo();
     });
     
     Route::get('/pricing', 'PricingController@index');
