@@ -11207,7 +11207,7 @@ var app = new Vue({
 /* 11 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: Error\n    at /home/ubuntu/workspace/node_modules/webpack/lib/NormalModule.js:141:35\n    at /home/ubuntu/workspace/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /home/ubuntu/workspace/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/home/ubuntu/workspace/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.onRender [as callback] (/home/ubuntu/workspace/node_modules/sass-loader/index.js:273:13)\n    at Object.<anonymous> (/home/ubuntu/workspace/node_modules/async/dist/async.js:2234:31)\n    at apply (/home/ubuntu/workspace/node_modules/async/dist/async.js:20:25)\n    at Object.<anonymous> (/home/ubuntu/workspace/node_modules/async/dist/async.js:56:12)\n    at Object.callback (/home/ubuntu/workspace/node_modules/async/dist/async.js:840:16)\n    at options.error (/home/ubuntu/workspace/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 12 */
