@@ -18,7 +18,7 @@ class CreateRoomCategoriesTable extends Migration
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->string('cover_image')->nullable();
-            $table->string('amount_of_persons')->nullable();
+            $table->integer('amount_of_persons')->nullable();
             $table->string('price')->nullable();
             $table->timestamps();
         });

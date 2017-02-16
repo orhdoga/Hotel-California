@@ -28,6 +28,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/', 'Administration\RoomCategoryController@index');
         Route::get('/create', 'Administration\RoomCategoryController@create');
         Route::post('/', 'Administration\RoomCategoryController@store');
+        Route::get('/{room_category}', 'Administration\RoomCategoryController@show');
         Route::get('/{room_category}/edit', 'Administration\RoomCategoryController@edit');
         Route::patch('/{room_category}', 'Administration\RoomCategoryController@update');
         Route::delete('/{room_category}', 'Administration\RoomCategoryController@destroy');

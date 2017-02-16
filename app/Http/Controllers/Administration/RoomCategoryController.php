@@ -44,8 +44,8 @@ class RoomCategoryController extends Controller
         $this->validate($request, [
             'name' => 'required|max:30',
             'description' => 'required',
-            'amount_of_persons' => 'required',
-            'price' => 'required',
+            'amount_of_persons' => 'required|integer',
+            'price' => 'required|integer',
             'cover_image' => 'required',
         ]);
         
@@ -73,9 +73,11 @@ class RoomCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
      
-    public function show($id)
+    public function show(RoomCategory $room_category)
     {
-        //
+        return view('administration.roomCategory.show', [
+            'room_category' => $room_category,    
+        ]);
     }
 
     /**
