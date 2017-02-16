@@ -13,27 +13,27 @@ class RoomCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $example = new Roomcategory;
+        $example = new RoomCategory;
         $example->name = "Example";
         $example->description = "Working at Burger King";
-        $example->amount_of_persons = 5;
-        $example->price = 0;
+        $example->amount_of_persons = 3;
+        $example->price = 10;
         $example->cover_image = "Draven.jpg";        
         $example->save();
         
-        $example = new Roomcategory;
+        $example = new RoomCategory;
         $example->name = "Example1";
         $example->description = "Working at Burger King";
         $example->amount_of_persons = 5;
-        $example->price = 0;
+        $example->price = 30;
         $example->cover_image = "Draven.jpg";
         $example->save();
         
-        $example = new Roomcategory;
+        $example = new RoomCategory;
         $example->name = "Example2";
         $example->description = "Working at Burger King";
-        $example->amount_of_persons = 5;
-        $example->price = 0;
+        $example->amount_of_persons = 7;
+        $example->price = 50;
         $example->cover_image = "Draven.jpg";        
         $example->save();
     }

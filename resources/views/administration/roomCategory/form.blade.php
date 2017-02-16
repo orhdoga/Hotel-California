@@ -52,12 +52,15 @@
                     
                     <div class="form-group">
                         <label for="amount_of_persons">Amount of persons</label>
-                        <input id="amount_of_persons" type="text" class="form-control" name="amount_of_persons" placeholder="E.g. 6" style="width: 65px;" value="{{ isset($room_category) ? $room_category->amount_of_persons : '' }}">
+                        <input id="amount_of_persons" type="text" class="form-control" name="amount_of_persons" style="width: 45px;" value="{{ isset($room_category) ? $room_category->amount_of_persons : '' }}">
                     </div>
                     
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input id="price" type="text" class="form-control" name="price" placeholder="E.g. €50,0" style="width: 95px;" value="{{ isset($room_category) ? $room_category->price : '' }}">
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input id="price" type="text" class="form-control" name="price" style="width: 60px;" value="{{ isset($room_category) ? $room_category->price : '' }}">
+                        </div>
                     </div>
                     
                     <div class="form-group">

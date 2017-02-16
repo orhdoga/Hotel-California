@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Administration;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RoomCategoryStoreRequest;
+use App\Http\Requests\RoomCategoryUpdateRequest;
 use Illuminate\Http\Request;
 
 use App\RoomCategory;
@@ -39,16 +41,8 @@ class RoomCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, RoomCategory $room_category)
+    public function store(Request $request, RoomCategoryStoreRequest $store, RoomCategory $room_category)
     {
-        $this->validate($request, [
-            'name' => 'required|max:30',
-            'description' => 'required',
-            'amount_of_persons' => 'required|integer',
-            'price' => 'required|integer',
-            'cover_image' => 'required',
-        ]);
-        
         $room_category->fill($request->all());
         
         if($request->hasFile('cover_image')) {
@@ -100,16 +94,8 @@ class RoomCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RoomCategory $room_category)
+    public function update(Request $request, RoomCategoryUpdateRequest $update, RoomCategory $room_category)
     {
-        $this->validate($request, [
-            'name' => 'required|max:30',
-            'description' => 'required',
-            'amount_of_persons' => 'required',
-            'price' => 'required',
-            'cover_image' => 'required',
-        ]);
-        
         $room_category->update($request->all());
         
         if($request->hasFile('cover_image')) {

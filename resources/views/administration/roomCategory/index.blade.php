@@ -47,7 +47,7 @@
                     <td style="padding-top: 15px;">{{ $room_category->description }}</td>
                     <td style="padding-top: 15px;">{{ $room_category->amount_of_persons }}</td>                    
                     <td><img class="img-fluid" src="{{ '/images/' . $room_category->cover_image }}" style="height: 120px; width: 120px;"></td>
-                    <td style="padding-top: 15px;">{{ $room_category->price }}</td>
+                    <td style="padding-top: 15px;">${{ $room_category->price }}</td>
                     <td>
                         <div class="pull-right">
                             <form method="POST" action="{{ url('/roomcategories/' . $room_category->id) }}">
