@@ -17,7 +17,7 @@ class RoomCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(RoomCategory $room_category)
+    public function index()
     {
         $room_category = RoomCategory::all(); 
     
