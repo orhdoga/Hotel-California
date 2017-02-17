@@ -31,7 +31,6 @@
                 <th>Id</th>
                 <th>Room</th>
                 <th>Room category</th>
-                <th>Room plan</th>
                 <th></th>
             </tr>
         </thead>
@@ -42,7 +41,6 @@
                     <td style="padding-top: 15px;">{{ $room->id }}</td>
                     <td style="padding-top: 15px;"><a href="{{ url('/rooms/' . $room->id) }}">{{ $room->name }}</a></td>
                     <td style="padding-top: 15px;"><a href="{{ url('/roomcategories/' . $room->room_category->id  . '/edit') }}">{{ $room->room_category->name }}</a></td>
-                    <td><img class="img-fluid" src="{{ '/images/' . $room->room_plan }}" style="height: 120px; width: 120px;"></td>
                     <td>
                         <div class="pull-right">
                             <form method="POST" action="{{ url('/rooms/' . $room->id) }}">

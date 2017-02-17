@@ -10,7 +10,7 @@ class RoomCategory extends Model
         'name',
         'description',
         'price',
+        'cover_image',
         'amount_of_persons',
-        'cover_image',        
     ];
 }

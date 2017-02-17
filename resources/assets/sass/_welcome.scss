@@ -35,13 +35,12 @@
 
 .navbar-nav > li > .dropdown-menu {
     margin-top: 5px;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
     border-radius: 10px;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     color: #fed136;
+    line-height: 1px;
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {

@@ -54,11 +54,6 @@
                                         @endforeach    
                             </select>
                         </div>
-                        
-                        <div class="form-group">
-                            <label>Add a room plan to a room</label>
-                            <input type="file" name="room_plan">
-                        </div>
                       
                         <button type="submit" class="btn btn-primary">{{ isset($room) ? 'Update' : 'Submit' }}</button>
                     

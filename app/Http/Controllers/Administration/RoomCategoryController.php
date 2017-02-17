@@ -7,6 +7,7 @@ use App\Http\Requests\RoomCategoryStoreRequest;
 use App\Http\Requests\RoomCategoryUpdateRequest;
 use Illuminate\Http\Request;
 
+use Image;
 use App\RoomCategory;
 
 class RoomCategoryController extends Controller

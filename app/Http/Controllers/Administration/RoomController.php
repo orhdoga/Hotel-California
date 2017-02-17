@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Administration;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Image;
 use App\Room;
 use App\RoomCategory;
-use Image;
 
 class RoomController extends Controller
 {
@@ -50,20 +50,11 @@ class RoomController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:room_categories|max:30',
             'room_category_id' => 'required',
-            'room_plan' => 'required',
         ]);
         
         $room = new Room;
         $room->name = $request->name;
         $room->room_category_id = $request->room_category_id;
-        
-        if($request->hasFile('room_plan')) {
-            $room_plan = $request->file('room_plan');
-            $filename = time() . '.' . $room_plan->getClientOriginalExtension();
-            $location = public_path('/images/' . $filename);
-            Image::make($room_plan)->resize(120, 120)->save($location);
-            $room->room_plan = $filename;
-        }
         
         $room->save();
         
@@ -116,14 +107,6 @@ class RoomController extends Controller
         ]);
         
         $room->update($request->all());
-        
-        if($request->hasFile('room_plan')) {
-            $room_plan = $request->file('room_plan');
-            $filename = time() . '.' . $room_plan->getClientOriginalExtension();
-            $location = public_path('/images/' . $filename);
-            Image::make($room_plan)->resize(120, 120)->save($location);
-            $room->room_plan = $filename;
-        }
         
         $room->save();
         
