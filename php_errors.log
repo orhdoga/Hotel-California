@@ -1,1 +1,2 @@
 [12-Feb-2017 20:13:38 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/ubuntu/workspace/vendor/symfony/http-foundation/Response.php on line 385
+[18-Feb-2017 20:24:17 UTC] PHP Fatal error:  Cannot use App\Repositories\RoomCategory as RoomCategory because the name is already in use in /home/ubuntu/workspace/app/Http/Controllers/Administration/RoomCategoryController.php on line 12

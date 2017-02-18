@@ -42,11 +42,6 @@
                         <td><b>Room category</b></td>
                         <td>{{ $room->room_category->name }}</td>
                     </tr>
-                    
-                    <tr>
-                        <td><b>Room plan</b></td>
-                        <td><img src="{{ '/images/' . $room->room_plan }}" style="height: 120px; width: 120px;"></td>
-                    </tr>
                 
                 </table>
                 

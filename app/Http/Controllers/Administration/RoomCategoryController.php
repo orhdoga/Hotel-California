@@ -8,6 +8,7 @@ use App\Http\Requests\RoomCategoryUpdateRequest;
 use Illuminate\Http\Request;
 
 use Image;
+use App\Repositories\RoomCategories;
 use App\RoomCategory;
 
 class RoomCategoryController extends Controller
@@ -17,9 +18,9 @@ class RoomCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(RoomCategory $room_category)
     {
-        $room_category = RoomCategory::all(); 
+        $room_category = $room_category->all(); 
     
         return view('administration.roomCategory.index', [
             'room_categories' => $room_category,
