@@ -25,7 +25,7 @@ class RoomCategoryUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|max:30',
-            'description' => 'required',
+            'description' => 'required|max:200',
             'amount_of_persons' => 'required|integer',
             'price' => 'required|integer',
             'cover_image' => 'required',

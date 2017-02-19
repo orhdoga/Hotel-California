@@ -1,2 +1,4 @@
 [12-Feb-2017 20:13:38 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/ubuntu/workspace/vendor/symfony/http-foundation/Response.php on line 385
 [18-Feb-2017 20:24:17 UTC] PHP Fatal error:  Cannot use App\Repositories\RoomCategory as RoomCategory because the name is already in use in /home/ubuntu/workspace/app/Http/Controllers/Administration/RoomCategoryController.php on line 12
+[19-Feb-2017 10:37:06 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Talk has a deprecated constructor in /home/ubuntu/workspace/storage/framework/views/a4d3108b50f795c5fd230ec8afc59fe27a31a479.php on line 5
+[19-Feb-2017 11:33:43 UTC] PHP Fatal error:  Class Square contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Shape::getTest) in /home/ubuntu/workspace/storage/framework/views/a4d3108b50f795c5fd230ec8afc59fe27a31a479.php on line 28

@@ -21,6 +21,10 @@ Route::get('/phpinfo', function() {
     return phpinfo();
 });
 
+Route::get('/test', function() {
+    return view('test');    
+});
+
 Route::group(['middleware' => ['auth']], function () {
     
     Route::group(['prefix' => 'roomcategories'], function () {
