@@ -16,7 +16,7 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Room $room)
+    public function index()
     {
         $rooms = Room::paginate(15);
         

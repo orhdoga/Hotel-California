@@ -6,17 +6,14 @@
     
     <div class="row">
         
-        <div class="col-md-12">
-        
+        <div class="col-md-6">
             <h1>Room category {{ $room_category->name }}</h1>
-        
+            <hr>
         </div>
         
     </div>
     
 </div>
-
-<br>
 
 <div class="container">
     

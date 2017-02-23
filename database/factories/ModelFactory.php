@@ -28,5 +28,6 @@ $factory->define(App\Room::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name,
+        'room_category_id' => 1,
     ];
 });

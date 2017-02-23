@@ -7,15 +7,20 @@
     <div class="row">
             
         <div class="col-md-6">    
-            <h1>Room categories overview</h1>
-        </div>
-        
-        <div class="pull-right">
-            <a href="/roomcategories/create">
-                <h1>Create</h1>
+            <h1 style="display: inline-block;">Room categories overview</h1>
+            <a href="#" style="color: #636b6f; margin-left: 10px;">
+                <i class="fa fa-print fa-2x" onclick="myFunction()" aria-hidden="true" title="Click the icon to print the current page."></i>
             </a>
         </div>
-    
+        
+        <div class="col-md-6">
+            <div class="pull-right">
+                <a href="/roomcategories/create">
+                    <h1>Create</h1>
+                </a>
+            </div>
+        </div>
+        
     </div>
     
 </div>
@@ -44,7 +49,7 @@
                     <td style="padding-top: 15px;">
                         <a href="{{ url('/roomcategories/' . $room_category->id) }}">{{ $room_category->name }}</a>
                     </td>
-                    <td style="padding-top: 15px; word-wrap: break-word; width: 250px;">{{ $room_category->description }}</td>
+                    <td style="padding-top: 15px; width: 200px; word-wrap: break-word;">{{ $room_category->description }}</td>
                     <td style="padding-top: 15px;">{{ $room_category->amount_of_persons }}</td>                    
                     <td><img class="img-fluid" src="{{ '/images/' . $room_category->cover_image }}" style="height: 120px; width: 120px;"></td>
                     <td style="padding-top: 15px;">${{ $room_category->price }}</td>

@@ -7,14 +7,19 @@
     <div class="row">
             
         <div class="col-md-6">    
-            <h1>Rooms overview</h1>
+            <h1 style="display: inline-block;">Rooms overview</h1>
+            <a href="#" style="color: #636b6f; margin-left: 10px;">
+                <i class="fa fa-print fa-2x" onclick="myFunction()" aria-hidden="true" title="Click the icon to print the current page."></i>
+            </a>        
         </div>
         
-        <div class="pull-right">
-            <a href="/rooms/create">
-                <h1>Create</h1>
-            </a>
-        </div>
+        <div class="col-md-6">
+            <div class="pull-right">
+                <a href="/rooms/create">
+                    <h1>Create</h1>
+                </a>
+            </div>
+        </div>    
     
     </div>
     

@@ -6,7 +6,7 @@
     
     <div class="row">
         
-        <div class="col-md-12">
+        <div class="col-md-6">
             
             @if(isset($room))
                 <h1>Room edit</h1>
@@ -14,13 +14,13 @@
                 <h1>Room create</h1>
             @endif    
             
+            <hr>
+            
         </div>
         
     </div>
     
 </div>
-
-<br>
 
 <div class="container">
     
