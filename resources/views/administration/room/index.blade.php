@@ -8,7 +8,7 @@
             
         <div class="col-md-6">    
             <h1 style="display: inline-block;">Rooms overview</h1>
-            <a href="#" style="color: #636b6f; margin-left: 10px;">
+            <a href="#" class="printer">
                 <i class="fa fa-print fa-2x" onclick="myFunction()" aria-hidden="true" title="Click the icon to print the current page."></i>
             </a>        
         </div>
@@ -45,7 +45,8 @@
                 <tr>
                     <td style="padding-top: 15px;">{{ $room->id }}</td>
                     <td style="padding-top: 15px;"><a href="{{ url('/rooms/' . $room->id) }}">{{ $room->name }}</a></td>
-                    <td style="padding-top: 15px;"><a href="{{ url('/roomcategories/' . $room->room_category->id  . '/edit') }}">{{ $room->room_category->name }}</a></td>
+                    <td style="padding-top: 15px;"><a href="{{ isset($room->room_category) ? url('/roomcategories/' . $room->room_category->id  . '/edit') : '' }}">
+                        {{ isset($room->room_category) ? $room->room_category->name : ''  }}</a></td>
                     <td>
                         <div class="pull-right">
                             <form method="POST" action="{{ url('/rooms/' . $room->id) }}">

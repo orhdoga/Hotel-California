@@ -11,3 +11,8 @@ html, body {
     margin-top: 0;
     border-radius: 0;
 }
+
+.printer {
+    color: #636b6f;
+    margin-left: 10px;
+}

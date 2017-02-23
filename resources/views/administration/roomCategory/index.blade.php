@@ -8,8 +8,8 @@
             
         <div class="col-md-6">    
             <h1 style="display: inline-block;">Room categories overview</h1>
-            <a href="#" style="color: #636b6f; margin-left: 10px;">
-                <i class="fa fa-print fa-2x" onclick="myFunction()" aria-hidden="true" title="Click the icon to print the current page."></i>
+            <a href="#" class="printer">
+                <i class="fa fa-print fa-2x" aria-hidden="true" onclick="myFunction()" title="Click the icon to print the current page."></i>
             </a>
         </div>
         
