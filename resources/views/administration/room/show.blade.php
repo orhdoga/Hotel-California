@@ -37,7 +37,7 @@
                     
                     <tr>
                         <td><b>Room category</b></td>
-                        <td>{{ $room->room_category->name }}</td>
+                        <td>{{ isset($room->room_category) ? $room->room_category->name : '' }}</td>
                     </tr>
                 
                 </table>

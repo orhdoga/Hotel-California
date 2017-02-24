@@ -27,7 +27,7 @@ class RoomCategoryStoreRequest extends FormRequest
             'name' => 'required|unique:room_categories|max:30',
             'description' => 'required|max:200',
             'amount_of_persons' => 'required|integer',
-            'price' => 'required|integer',
+            'price' => 'required',
             'cover_image' => 'required',
         ];
     }
