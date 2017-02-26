@@ -19777,11 +19777,8 @@ var Vue = __webpack_require__(9);
 
 Vue.component('example', __webpack_require__(35));
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello world!'
-  }
+var test = new Vue({
+  el: '#test'
 });
 
 /***/ }),

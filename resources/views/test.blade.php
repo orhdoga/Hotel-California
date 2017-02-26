@@ -1,12 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.bulma')
 
 @section('content')
 
 <div class="container">
 
-    <div class="app">
-        <input type="text" v-model="message">
-        <p>Message: @{{ message }}</p>
+    <div id="test">
+
+        
+
     </div>
 
 </div>

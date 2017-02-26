@@ -22,12 +22,8 @@
         </div>    
     
     </div>
-    
-</div>
 
-<br>
-
-<div class="container">
+    <br>
     
     <table class="table table-hover">
                 
