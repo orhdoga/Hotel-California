@@ -18,12 +18,10 @@ class RoomCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(RoomCategory $room_category)
+    public function index()
     {
-        $room_category = $room_category->all(); 
-    
         return view('administration.roomCategory.index', [
-            'room_categories' => $room_category,
+            'room_categories' => RoomCategory::paginate(15)
         ]);
     }
 
@@ -72,7 +70,7 @@ class RoomCategoryController extends Controller
     public function show(RoomCategory $room_category)
     {
         return view('administration.roomCategory.show', [
-            'room_category' => $room_category,    
+            'room_category' => $room_category   
         ]);
     }
 
@@ -85,7 +83,7 @@ class RoomCategoryController extends Controller
     public function edit(RoomCategory $room_category)
     {
         return view('administration.roomCategory.form', [
-            'room_category' => $room_category,    
+            'room_category' => $room_category   
         ]);
     }
 

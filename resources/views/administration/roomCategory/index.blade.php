@@ -22,7 +22,7 @@
         </div>
         
     </div>
-
+    
     <br>
             
     <table class="table table-hover">
@@ -64,6 +64,10 @@
         </tbody>
         
     </table>
+    
+<div class="pull-right">
+    {{ $room_categories->links() }}
+</div>    
     
 </div>
 

@@ -8,6 +8,6 @@ class RoomCategories {
     
     public function all()
     {
-        return RoomCategory::all();
+        return RoomCategory::paginate(15);
     }
 }

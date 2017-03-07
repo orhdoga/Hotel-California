@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use Image;
 use App\Room;
+use App\Repositories\Rooms;
 use App\RoomCategory;
 
 class RoomController extends Controller
@@ -18,10 +19,8 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $rooms = Room::paginate(15);
-        
         return view('administration.room.index', [
-            'rooms' => $rooms,
+            'rooms' => Room::paginate(15)
         ]);
     }
 
@@ -30,12 +29,10 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(RoomCategory $roomCategories)
+    public function create()
     {
-        $roomCategories = RoomCategory::all();
-        
         return view('administration.room.form', [
-            'room_categories' => $roomCategories,    
+            'room_categories' => RoomCategory::all()  
         ]);
     }
 
@@ -49,7 +46,7 @@ class RoomController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|unique:room_categories|max:30',
-            'room_category_id' => 'required',
+            'room_category_id' => 'required'
         ]);
         
         $room = new Room;
@@ -72,7 +69,7 @@ class RoomController extends Controller
     public function show(Room $room)
     {
         return view('administration.room.show', [
-            'room' => $room,    
+            'room' => $room
         ]);
     }
 
@@ -82,13 +79,11 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Room $room, RoomCategory $roomCategories)
+    public function edit(Room $room)
     {
-        $roomCategories = RoomCategory::all();
-        
         return view('administration.room.form', [
             'room' => $room,
-            'room_categories' => $roomCategories,
+            'room_categories' => RoomCategory::all()
         ]);
     }
 
@@ -103,7 +98,7 @@ class RoomController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|unique:room_categories|max:30',
-            'room_category_id' => 'required',
+            'room_category_id' => 'required'
         ]);
         
         $room->update($request->all());

@@ -18,5 +18,5 @@ var Vue = require('vue');
 Vue.component('example', require('./components/Example.vue'));
 
 var test = new Vue({
-    el: '#test',
+    el: '#test'
 });

@@ -50,7 +50,5 @@ Route::group(['middleware' => ['auth']], function () {
        Route::delete('/{room}', 'Administration\RoomController@destroy');
        
     });
-    
-    Route::get('/pricing', 'PricingController@index');
 
 });
