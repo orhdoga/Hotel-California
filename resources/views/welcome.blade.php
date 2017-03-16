@@ -50,7 +50,7 @@
         
         <div class="col-md-12 col-md-offset-4">
             <h1>Hotel of your dreams...</h1>
-        </div>        
+        </div>
     
     </div>
     

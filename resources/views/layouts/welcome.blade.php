@@ -83,7 +83,7 @@
                                 <li class="subsytem {{is_current_page('/rooms') ? 'active' : ''}}"><a href="/rooms">Rooms</a></li>
                             </ul>
                         </li>
-                        <li class="subsytem"><a href="#"><b>Web reservation</b></a></li>
+                        <li class="subsytem {{is_current_page('/webreservation') ? 'active' : ''}}"><a href="/webreservation"><b>Web reservation</b></a></li>
                         <li class="subsytem"><a href="#"><b>Front desk</b></a></li>
                     </ul>
                 @endif

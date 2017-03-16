@@ -32,7 +32,7 @@
             @endif    
                 
                     {{ csrf_field() }}
-                    
+            
                     <div class="well" id="app">
                         
                         <div class="form-group">
