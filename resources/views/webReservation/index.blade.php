@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container" id="app">
+<div class="container">
     
     <div class="row">
         

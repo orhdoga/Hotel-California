@@ -20488,13 +20488,17 @@ Vue.component('date-picker', __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker___defa
 var app = new Vue({
     el: '#app',
     data: {
-        room_categories: []
+        room_categories: [],
+        rooms: []
     },
     mounted: function mounted() {
         var _this = this;
 
         axios.get('/api/roomcategories').then(function (response) {
             return _this.room_categories = response.data;
+        });
+        axios.get('/api/rooms').then(function (response) {
+            return _this.rooms = response.data;
         });
     }
 });

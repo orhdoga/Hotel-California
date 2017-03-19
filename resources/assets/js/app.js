@@ -23,9 +23,11 @@ Vue.component('date-picker', Datepicker);
 var app = new Vue({
     el: '#app',
     data: {
-        room_categories: []
+        room_categories: [],
+        rooms: []
     },
     mounted() {
         axios.get('/api/roomcategories').then(response => this.room_categories = response.data);
+        axios.get('/api/rooms').then(response => this.rooms = response.data);
     }
 });
