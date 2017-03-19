@@ -21,5 +21,11 @@ Vue.component('example', require('./components/Example.vue'));
 Vue.component('date-picker', Datepicker);
 
 var app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        room_categories: []
+    },
+    mounted() {
+        axios.get('/api/roomcategories').then(response => this.room_categories = response.data);
+    }
 });

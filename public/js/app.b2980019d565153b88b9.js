@@ -20486,7 +20486,17 @@ Vue.component('example', __webpack_require__(35));
 Vue.component('date-picker', __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker___default.a);
 
 var app = new Vue({
-  el: '#app'
+    el: '#app',
+    data: {
+        room_categories: []
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        axios.get('/api/roomcategories').then(function (response) {
+            return _this.room_categories = response.data;
+        });
+    }
 });
 
 /***/ }),

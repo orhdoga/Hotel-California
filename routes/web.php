@@ -21,6 +21,13 @@ Route::get('/phpinfo', function() {
     return phpinfo();
 });
 
+Route::group(['prefix' => 'api'], function () { 
+    
+    Route::get('/roomcategories', 'Api\RoomCategoryController@get');
+    Route::get('/rooms', 'Api\RoomController@get');
+    
+}); 
+
 Route::group(['middleware' => ['auth']], function () {
     
     Route::group(['prefix' => 'roomcategories'], function () {

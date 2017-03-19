@@ -36,9 +36,7 @@
                     <label>Room category</label>
                     <select class="form-control">
                         <option style="display: none" value="">Choose a room category</option>
-                        @foreach($room_categories as $room_category)
-                            <option value="{{ $room_category->id }}">{{ $room_category->name }}</option>
-                        @endforeach
+                        <option v-for="room_category in room_categories" value="@{{ room_category.id }}">@{{ room_category.name }}</option>
                     </select>
                 </div>
                 

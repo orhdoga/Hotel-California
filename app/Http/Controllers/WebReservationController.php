@@ -25,9 +25,7 @@ class WebReservationController extends Controller
      */
     public function create()
     {
-        return view('webReservation.form', [
-            'room_categories' => RoomCategory::all()    
-        ]);
+        return view('webReservation.form');
     }
 
     /**
