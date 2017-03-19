@@ -21,10 +21,6 @@ Route::get('/phpinfo', function() {
     return phpinfo();
 });
 
-Route::get('/test', function() {
-    return view('test');    
-});
-
 Route::group(['middleware' => ['auth']], function () {
     
     Route::group(['prefix' => 'roomcategories'], function () {
@@ -50,7 +46,12 @@ Route::group(['middleware' => ['auth']], function () {
        Route::delete('/{room}', 'Administration\RoomController@destroy');
        
     });
+    
+    Route::group(['prefix' => 'webreservations'], function () { 
+        
+        Route::get('/', 'WebReservationController@index');
+        Route::get('/search', 'WebReservationController@create');
+        
+    });    
 
 });
-
-Route::get('/webreservation', 'WebReservationController@index');

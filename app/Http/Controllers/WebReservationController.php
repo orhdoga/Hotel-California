@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\RoomCategory;
+
 class WebReservationController extends Controller
 {
     /**
@@ -23,7 +25,9 @@ class WebReservationController extends Controller
      */
     public function create()
     {
-        //
+        return view('webReservation.form', [
+            'room_categories' => RoomCategory::all()    
+        ]);
     }
 
     /**

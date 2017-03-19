@@ -15,6 +15,15 @@ class CreateWebReservationsTable extends Migration
     {
         Schema::create('web_reservations', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('arrival')->nullable();
+            $table->string('departure')->nullable();
+            $table->string('firstName')->nullable();
+            $table->string('LastName')->nullable();
+            $table->string('adress')->nullable();
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
+            $table->string('phoneNumber')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

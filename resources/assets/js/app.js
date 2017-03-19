@@ -15,8 +15,11 @@ var Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+import Datepicker from 'vuejs-datepicker';
 
-var test = new Vue({
-    el: '#test'
+Vue.component('example', require('./components/Example.vue'));
+Vue.component('date-picker', Datepicker);
+
+var app = new Vue({
+    el: '#app'
 });
