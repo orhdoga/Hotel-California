@@ -23,6 +23,11 @@ class WebReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getSearch()
+    {
+        return view('webReservation.search');
+    } 
+     
     public function create()
     {
         return view('webReservation.form');
@@ -34,6 +39,11 @@ class WebReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function postSearch(Request $request)
+    {
+        //
+    }
+    
     public function store(Request $request)
     {
         //

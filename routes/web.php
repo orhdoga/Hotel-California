@@ -57,7 +57,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'webreservations'], function () { 
         
         Route::get('/', 'WebReservationController@index');
-        Route::get('/search', 'WebReservationController@create');
+        Route::get('/search', 'WebReservationController@getSearch');
+        Route::get('/create', 'WebReservationController@create');
         
     });    
 
