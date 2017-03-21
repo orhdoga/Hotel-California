@@ -46,11 +46,13 @@
                             <select class="form-control" name="room_category_id">
                                 <option style="display: none" value="">Attach a room category to a room</option>
                                 @foreach($room_categories as $room_category)
-                                    <option value="{{ $room_category->id }}">{{ $room_category->name }}</option>
-                                @endforeach    
+                                    <option value="{{ $room_category->id }}">
+                                            {{ $room_category->name }}
+                                    </option>
+                                @endforeach 
                             </select>
                         </div>
-                      
+
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">{{ isset($room) ? 'Update' : 'Submit' }}</button>
                         </div>
