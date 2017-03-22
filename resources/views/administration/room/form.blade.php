@@ -33,7 +33,7 @@
                 
                     {{ csrf_field() }}
             
-                    <div class="well" id="app">
+                    <div class="well">
                         
                         <div class="form-group">
                             <label for="name">Room</label>
@@ -47,7 +47,7 @@
                                 <option style="display: none" value="">Attach a room category to a room</option>
                                 @foreach($room_categories as $room_category)
                                     <option value="{{ $room_category->id }}">
-                                            {{ $room_category->name }}
+                                        {{ $room_category->name }}
                                     </option>
                                 @endforeach 
                             </select>

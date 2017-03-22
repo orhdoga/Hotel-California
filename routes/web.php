@@ -1,5 +1,7 @@
 <?php
 
+use App\Price;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,6 +62,12 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/search', 'WebReservationController@getSearch');
         Route::get('/create', 'WebReservationController@create');
         
-    });    
+    });  
+    
+    Route::get('/pricing', function() {
+        return view('pricing', [
+            'prices' => Price::all()    
+        ]);
+    });
 
 });
