@@ -38,15 +38,15 @@
                         <div class="form-group">
                             <label for="name">Room</label>
                             <input id="name" type="text" name="name" class="form-control" placeholder="Enter a name" 
-                            value="{{ isset($room) ? $room->name : '' }}">
+                            value="{{ isset($room) ? old('name', $room->name) : old('name') }}">
                         </div>
-                        
+                      
                         <div class="form-group">
                             <label>Room category</label>                            
-                            <select class="form-control" name="room_category_id">
-                                <option style="display: none" value="">Attach a room category to a room</option>
+                            <select class="form-control" name="room_category_id" value="{{ isset($room) ? old('room_category_id', $room->roomCategory->id) : old('room_category_id') }}">
+                                <option style="display: none" value="0">Attach a room category to a room</option>
                                 @foreach($room_categories as $room_category)
-                                    <option value="{{ $room_category->id }}">
+                                    <option value="{{ $room_category->id }}" @if(isset($room) && old('room_category_id', $room->roomCategory->id) == $room_category->id) selected @endif>
                                         {{ $room_category->name }}
                                     </option>
                                 @endforeach 

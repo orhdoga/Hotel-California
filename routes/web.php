@@ -23,26 +23,23 @@ Route::get('/phpinfo', function() {
     return phpinfo();
 });
 
-Route::group(['prefix' => 'api'], function () { 
-    
-    Route::get('/roomcategories', 'Api\RoomCategoryController@get');
-    Route::get('/rooms', 'Api\RoomController@get');
-    
-}); 
-
 Route::group(['middleware' => ['auth']], function () {
     
-    Route::group(['prefix' => 'roomcategories'], function () {
+    // Route::group(['prefix' => 'roomcategories'], function () {
     
-        Route::get('/', 'Administration\RoomCategoryController@index');
-        Route::get('/create', 'Administration\RoomCategoryController@create');
-        Route::post('/', 'Administration\RoomCategoryController@store');
-        Route::get('/{room_category}', 'Administration\RoomCategoryController@show');
-        Route::get('/{room_category}/edit', 'Administration\RoomCategoryController@edit');
-        Route::patch('/{room_category}', 'Administration\RoomCategoryController@update');
-        Route::delete('/{room_category}', 'Administration\RoomCategoryController@destroy');
+    //     Route::get('/', 'Administration\RoomCategoryController@index');
+    //     Route::get('/create', 'Administration\RoomCategoryController@create');
+    //     Route::post('/', 'Administration\RoomCategoryController@store');
+    //     Route::get('/{room_category}', 'Administration\RoomCategoryController@show');
+    //     Route::get('/{room_category}/edit', 'Administration\RoomCategoryController@edit');
+    //     Route::patch('/{room_category}', 'Administration\RoomCategoryController@update');
+    //     Route::delete('/{room_category}', 'Administration\RoomCategoryController@destroy');
         
-    });
+    // });
+    
+    Route::resource('roomcategories', 'Administration\RoomCategoryController');
+    
+    Route::resource('prices', 'PricingController');
     
     Route::group(['prefix' => 'rooms'], function () { 
        

@@ -41,8 +41,8 @@
                 <tr>
                     <td style="padding-top: 15px;">{{ $room->id }}</td>
                     <td style="padding-top: 15px;"><a href="{{ url('/rooms/' . $room->id) }}">{{ $room->name }}</a></td>
-                    <td style="padding-top: 15px;"><a href="{{ isset($room->room_category) ? url('/roomcategories/' . $room->room_category->id  . '/edit') : '' }}">
-                        {{ isset($room->room_category) ? $room->room_category->name : ''  }}</a></td>
+                    <td style="padding-top: 15px;"><a href="{{ isset($room->roomCategory) ? url('/roomcategories/' . $room->roomCategory->id  . '/edit') : '' }}">
+                        {{ isset($room->roomCategory) ? $room->roomCategory->name : ''  }}</a></td>
                     <td>
                         <div class="pull-right">
                             <form method="POST" action="{{ url('/rooms/' . $room->id) }}">

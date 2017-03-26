@@ -22,7 +22,7 @@
     
     <div class="row">
         
-        <div class="col-md-12">
+        <div class="col-md-6">
             
             <table class="table table-hover">
                 <thead>
@@ -40,32 +40,32 @@
                             <td>
                                 <div class="input-group">
                                     <span class="input-group-addon">$</span>
-                                    <input type="text" class="form-control" value="{{ $price->single_room }}">
+                                    <input type="text" class="form-control" name="single_room[{{$price->id}}]" style="width: 60px;" value="{{ old('single_room[' . $price->id . ']', $price->single_room) }}">
                                 </div>    
                             </td>
                             <td>
                                 <div class="input-group">
                                     <span class="input-group-addon">$</span>
-                                    <input type="text" class="form-control" value="{{ $price->single_room }}">
+                                    <input type="text" class="form-control" name="double_room[{{$price->id}}]" style="width: 60px;" value="{{ old('double_room[' . $price->id . ']', $price->double_room) }}">
                                 </div> 
                             </td>
                             <td>
                                 <div class="input-group">
                                     <span class="input-group-addon">$</span>
-                                    <input type="text" class="form-control" value="{{ $price->single_room }}">
+                                    <input type="text" class="form-control" name="family_room[{{$price->id}}]" style="width: 60px;" value="{{ old('family_room[' . $price->id . ']', $price->family_room) }}">
                                 </div> 
                             </td>
                         </tr>
                     @endforeach    
                 </tbody>
             </table>
+                    
+        <div class="form-group">
+            <button class="btn btn-primary pull-right">Update</button>
+        </div>
             
         </div>
         
-    </div>
-    
-    <div class="form-group">
-        <button class="btn btn-primary pull-right">Update</button>
     </div>
     
     </form>
