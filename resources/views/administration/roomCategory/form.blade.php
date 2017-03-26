@@ -25,7 +25,7 @@
         <div class="col-md-6">
             
             @if(isset($room_category))
-                <form method="POST" action="{{ route('roomcategories.update', ['roomcategory' => $room_category]) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ url('/roomcategories/' . $room_category->id) }}" enctype="multipart/form-data">
                     {{ method_field('PATCH') }}
             @else
                 <form method="POST" action="{{ url('/roomcategories') }}" enctype="multipart/form-data">
@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <label for="room_category">Room category</label>
                         <input id="room_category" type="text" class="form-control" name="name" placeholder="Enter a name"
-                        value="{{ old('room_category') }}">
+                        value="{{ isset($room_category) ? $room_category->name : old('room_category') }}">
                     </div> 
                     
                     <div class="form-group">
