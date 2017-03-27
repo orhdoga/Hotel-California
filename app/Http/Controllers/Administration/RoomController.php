@@ -20,7 +20,7 @@ class RoomController extends Controller
     public function index()
     {
         return view('administration.room.index', [
-            'rooms' => Room::with('roomCategory')->paginate(15)
+            'rooms' => Room::with('room_category')->paginate(15)
         ]);
     }
 

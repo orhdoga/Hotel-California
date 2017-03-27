@@ -48,6 +48,8 @@ Route::group(['middleware' => ['auth']], function () {
     
     // Route::resource('prices', 'PricingController');
     
+    Route::get('/pricing', 'PricingController@index');
+    
     Route::group(['prefix' => 'rooms'], function () { 
        
        Route::get('/', 'Administration\RoomController@index'); 
@@ -67,11 +69,5 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/create', 'WebReservationController@create');
         
     });  
-    
-    Route::get('/pricing', function() {
-        return view('pricing', [
-            'prices' => Price::all()    
-        ]);
-    });
 
 });
