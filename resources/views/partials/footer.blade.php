@@ -11,22 +11,24 @@
                 <div class="row">
                     
                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <h3>Lorem Ipsum</h3>
+                        <h3>Sitemap</h3>
                         <ul>
-                            <li> <a href="#">Lorem Ipsum</a> </li>
-                            <li> <a href="#">Lorem Ipsum</a> </li>
-                            <li> <a href="#">Lorem Ipsum</a> </li>
-                            <li> <a href="#">Lorem Ipsum</a> </li>
+                            <li> <a href="http://hotel-california-orhdoga.c9users.io/">Home</a> </li>
+                            <li> <a href="http://hotel-california-orhdoga.c9users.io/roomcategories">Room Categories</a> </li>
+                            <li> <a href="http://hotel-california-orhdoga.c9users.io/rooms">Rooms</a> </li>
+                            <li> <a href="http://hotel-california-orhdoga.c9users.io/webreservations">Web Reservation</a> </li>
+                            <li> <a href="http://hotel-california-orhdoga.c9users.io/pricing">Pricing</a> </li>
+                            <li> <a href="#">Front Desk</a> </li>
                         </ul>
                     </div>
                     
                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <h3>Lorem Ipsum</h3>
+                        <h3>Contact</h3>
                         <ul>
-                            <li> <a href="#">Lorem Ipsum</a> </li>
-                            <li> <a href="#">Lorem Ipsum</a> </li>
-                            <li> <a href="#">Lorem Ipsum</a> </li>
-                            <li> <a href="#">Lorem Ipsum</a> </li>
+                            <li> Hotel California </li>
+                            <li> 53413 CA </li>
+                            <li> Los Angeles, California </li>
+                            <li> 555-435213 </li>
                         </ul>
                     </div>
                     

@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::resource('prices', 'PricingController');
     
     Route::get('/pricing', 'PricingController@index');
+    Route::patch('/picing/{price}', 'PricingController@update');
     
     Route::group(['prefix' => 'rooms'], function () { 
        

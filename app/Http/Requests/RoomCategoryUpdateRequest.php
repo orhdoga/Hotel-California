@@ -27,7 +27,7 @@ class RoomCategoryUpdateRequest extends FormRequest
             'name' => 'required|max:30',
             'description' => 'required|max:200',
             'amount_of_persons' => 'required|integer',
-            'price' => 'required',
+            'price_id' => 'required',
             'cover_image' => 'required',
         ];
     }

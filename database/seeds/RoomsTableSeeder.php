@@ -18,14 +18,14 @@ class RoomsTableSeeder extends Seeder
         $example->room_category_id = 1;
         $example->save();
         
-        $example1 = new Room;
-        $example1->name = "Example1";
-        $example1->room_category_id = 2;
-        $example1->save();
-        
         $example2 = new Room;
         $example2->name = "Example2";
-        $example2->room_category_id = 3;
+        $example2->room_category_id = 2;
         $example2->save();
+        
+        $example3 = new Room;
+        $example3->name = "Example3";
+        $example3->room_category_id = 3;
+        $example->save();
     }
 }
