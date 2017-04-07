@@ -85,6 +85,44 @@
         
     </div> 
     
+    <hr>
+    
+</div>
+
+<div class="container">
+    
+    <div class="row">
+        
+        <div class="col-md-12 col-md-offset-4">
+            <h1>Different categories</h1>
+        </div>  
+        
+    </div>
+    
+    <br>
+
+    <div class="row">
+        
+        <div class="col-md-4">
+            <a href="/roomcategories/1">
+                <img src="/images/single-room.jpg" class="img-responsive" alt="">
+            </a>
+        </div>
+        
+        <div class="col-md-4">
+            <a href="/roomcategories/2">
+                <img src="/images/double-room.jpg" class="img-responsive" alt="">
+            </a>
+        </div>
+        
+        <div class="col-md-4">
+            <a href="/roomcategories/3">
+                <img src="/images/family-room.jpg" class="img-responsive" alt="">
+            </a>
+        </div>
+        
+    </div>    
+    
 </div>
 
 @include('partials.footer')

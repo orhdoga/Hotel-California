@@ -13,11 +13,11 @@
                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
                         <h3>Sitemap</h3>
                         <ul>
-                            <li> <a href="http://hotel-california-orhdoga.c9users.io/">Home</a> </li>
-                            <li> <a href="http://hotel-california-orhdoga.c9users.io/roomcategories">Room Categories</a> </li>
-                            <li> <a href="http://hotel-california-orhdoga.c9users.io/rooms">Rooms</a> </li>
-                            <li> <a href="http://hotel-california-orhdoga.c9users.io/webreservations">Web Reservation</a> </li>
-                            <li> <a href="http://hotel-california-orhdoga.c9users.io/pricing">Pricing</a> </li>
+                            <li> <a href="/">Home</a> </li>
+                            <li> <a href="/roomcategories">Room Categories</a> </li>
+                            <li> <a href="/rooms">Rooms</a> </li>
+                            <li> <a href="/webreservations">Web Reservation</a> </li>
+                            <li> <a href="/pricing">Pricing</a> </li>
                             <li> <a href="#">Front Desk</a> </li>
                         </ul>
                     </div>
@@ -25,10 +25,10 @@
                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
                         <h3>Contact</h3>
                         <ul>
-                            <li> Hotel California </li>
-                            <li> 53413 CA </li>
-                            <li> Los Angeles, California </li>
-                            <li> 555-435213 </li>
+                            <li>Hotel California</li>
+                            <li>CA 53413</li>
+                            <li>Los Angeles, California</li>
+                            <li>555-435213</li>
                         </ul>
                     </div>
                     
