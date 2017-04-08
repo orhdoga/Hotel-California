@@ -8,55 +8,7 @@
         
         <div class="col-md-12">
         
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-            
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    
-                    <div class="item active">
-                        <img src="/images/carousel-1.jpg" height="345" width="460">
-                    </div>
-            
-                    <div class="item">
-                        <img src="/images/carousel-2.jpg" height="345" width="460">
-                    </div>
-                
-                    <div class="item">
-                        <img src="/images/carousel-3.jpg" height="345" width="460">
-                    </div>
-                    
-                    <div class="main-text hidden-xs">
-                        <div class="text-center" style="font-family: Roboto;">
-                            <span style="color: #fed136;font-size: 48px; font-family: Roboto;"><b>HOTEL CALIFORNIA.</b></span>
-                            <h1>Hotel of your dreams.</h1>
-                            <br>
-                            <a href="/webreservations/create" class="btn btn-primary btn-lg" 
-                            style="margin-top: 45px;" data-toggle="tooltip" 
-                            title="Book that dream, right now!"><b>Book now!</b></a>
-                        </div>    
-                    </div>
-                
-                </div>
-        
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-        
-            </div>
+            @include('partials.welcome.carousel')
             
         </div>   
     
@@ -87,70 +39,98 @@
         
     </div> 
     
-    <hr>
-    
     <div class="row">
         
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center page-header" style="margin-top: 0px;">
             <h2>DIFFERENT CATEGORIES..</h2>
         </div>  
         
     </div>
-    
-    <br>
 
-    <div class="row" id="#roomCategories">
+    <div class="row">
         
         <div class="col-md-4">
-            <a href="/roomcategories/1">
-                <img src="/images/single-room.jpg" class="img-thumbnail img-responsive" data-toggle="tooltip" data-placement="bottom" title="Single room">
-            </a>
+            <div class="thumbnail">
+                <img src="/images/single-room.jpg" class="img-responsive">
+                <div class="caption">
+                    <h3>Single room</h3>
+                    <p>Lorem Ipsumdolor sit amet, consectetur adipiscing elit. Ut augue dui, tincidunt fermentum porta nec, tristique non dolor.</p>
+                    <p>
+                        <a href="/roomcategories/1" class="btn btn-primary" role="button">Details</a>
+                    </p>
+                </div>
+            </div>    
         </div>
         
         <div class="col-md-4">
-            <a href="/roomcategories/2">
-                <img src="/images/double-room.jpg" class="img-thumbnail img-responsive" data-toggle="tooltip" data-placement="bottom" title="Double room">
-            </a>
+            <div class="thumbnail">
+                <img src="/images/double-room.jpg" class="img-responsive">
+                <div class="caption">
+                    <h3>Double room</h3>
+                    <p>Lorem Ipsumdolor sit amet, consectetur adipiscing elit. Ut augue dui, tincidunt fermentum porta nec, tristique non dolor.</p>
+                    <p>
+                        <a href="/roomcategories/2" class="btn btn-primary" role="button">Details</a>
+                    </p>
+                </div>
+            </div>    
         </div>
         
         <div class="col-md-4">
-            <a href="/roomcategories/3">
-                <img src="/images/family-room.jpg" class="img-thumbnail img-responsive" data-toggle="tooltip" data-placement="bottom" title="Family room">
-            </a>
+            <div class="thumbnail">
+                <img src="/images/family-room.jpg" class="img-responsive">
+                <div class="caption">
+                    <h3>Family room</h3>
+                    <p>Lorem Ipsumdolor sit amet, consectetur adipiscing elit. Ut augue dui, tincidunt fermentum porta nec, tristique non dolor.</p>
+                    <p>
+                        <a href="/roomcategories/3" class="btn btn-primary" role="button">Details</a>
+                    </p>
+                </div>
+            </div>    
         </div>
         
     </div> 
     
-    <hr>
-    
     <div class="row">
         
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center page-header" style="margin-top: 0px;">
             <h2>MULTIPLE ACTIVITIES..</h2>
         </div> 
         
     </div>
     
-    <br>
-    
     <div class="row">
         
         <div class="col-md-4">
-            <img src="/images/activity-1.jpg" class="img-thumbnail img-responsive" data-toggle="tooltip" title="Taking a sit at the pool..">
+            <div class="thumbnail">
+                <img src="/images/activity-1.jpg" class="img-responsive">
+                <div class="caption">
+                    <p>Lorem Ipsumdolor sit amet, consectetur adipiscing elit. Ut augue dui, tincidunt fermentum porta nec, tristique non dolor.</p>
+                </div>
+            </div>    
         </div>
         
         <div class="col-md-4">
-            <img src="/images/activity-2.jpg" class="img-thumbnail img-responsive" data-toggle="tooltip" title="What about some canoeing?">
+            <div class="thumbnail">
+                <img src="/images/activity-2.jpg" class="img-responsive">
+                <div class="caption">
+                    <p>Lorem Ipsumdolor sit amet, consectetur adipiscing elit. Ut augue dui, tincidunt fermentum porta nec, tristique non dolor.</p>
+                </div>
+            </div>    
         </div>
         
         <div class="col-md-4">
-            <img src="/images/activity-3.jpg" class="img-thumbnail img-responsive" data-toggle="tooltip" title="..Or play some tennis!">
+            <div class="thumbnail">
+                <img src="/images/activity-3.jpg" class="img-responsive">
+                <div class="caption">
+                    <p>Lorem Ipsumdolor sit amet, consectetur adipiscing elit. Ut augue dui, tincidunt fermentum porta nec, tristique non dolor.</p>
+                </div>
+            </div>    
         </div>
         
     </div>
     
 </div>
 
-@include('partials.footer')
+@include('partials.welcome.footer')
 
 @endsection
