@@ -73,10 +73,10 @@
         <div class="footer-bottom">
             <div class="container">
                 <p class="pull-left" style="color: white;">Copyright © <span style="color: #fed136;">Hotel California 2017.</span> All rights reserved.</p>
-                <audio autoplay loop style="margin-left: 10px;">
-                    <source src="songs/Rick-Roll.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                </audio>
+                <!--<audio autoplay loop style="margin-left: 10px;">-->
+                <!--    <source src="songs/Rick-Roll.mp3" type="audio/mpeg">-->
+                <!--        Your browser does not support the audio element.-->
+                <!--</audio>-->
                 <div class="pull-right">
                     <ul class="nav nav-pills payments" style="color: white;">
                         <li><i class="fa fa-cc-visa" data-toggle="tooltip" title="Visa"></i></li>

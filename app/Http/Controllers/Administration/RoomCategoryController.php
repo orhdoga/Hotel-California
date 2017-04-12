@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Image;
 use App\Repositories\RoomCategories;
 use App\RoomCategory;
+use Carbon\Carbon;
 
 class RoomCategoryController extends Controller
 {
@@ -21,6 +22,7 @@ class RoomCategoryController extends Controller
     public function index()
     {
         return view('administration.roomCategory.index', [
+            'date' => Carbon::now(),
             'room_categories' => RoomCategory::paginate(15)
         ]);
     }

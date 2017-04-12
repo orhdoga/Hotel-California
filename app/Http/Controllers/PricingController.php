@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Price;
 use App\RoomCategory;
+use Carbon\Carbon;
 
 class PricingController extends Controller
 {
@@ -39,7 +40,29 @@ class PricingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $room_category_id = $request->get('room_category_id');
+        
+        $start = Carbon::createFromFormat(
+                'd-m-Y',
+                $request->get('start')
+            )
+            ->startOfDay();
+            
+        $end = Carbon::createFromFormat(
+                'd-m-Y',
+                $request->get('end')
+            )
+            ->endOfDay();
+            
+        $data = $request->all();
+        
+        $data['start'] = $start;
+        $data['end']   = $end;
+        
+        $room_category = RoomCategory::find($room_category_id);
+        $room_category->prices()->create($data);
+        
+        return back();
     }
 
     /**

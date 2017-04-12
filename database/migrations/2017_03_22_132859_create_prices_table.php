@@ -15,10 +15,13 @@ class CreatePricesTable extends Migration
     {
         Schema::create('prices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('days_of_week')->nullable();
-            $table->string('single_room')->nullable();
-            $table->string('double_room')->nullable();
-            $table->string('family_room')->nullable();
+            $table->date('start');
+            $table->date('end');
+            $table->decimal('price');
+            $table->integer('room_category_id')
+                ->references('id')
+                ->on('room_categories')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -23,6 +23,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\RoomCategory::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'description' => $faker->paragraph,
+        'cover_image' => 'Draven.jpg',
+        'amount_of_persons' => 5,
+        'price_id' => 1
+    ];
+});
+
 $factory->define(App\Room::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
