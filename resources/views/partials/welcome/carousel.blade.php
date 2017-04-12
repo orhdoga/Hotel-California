@@ -24,12 +24,12 @@
         
         <div class="main-text hidden-xs">
             <div class="text-center" style="font-family: Roboto;">
-                <span style="color: #fed136;font-size: 48px; font-family: Roboto;"><b>HOTEL CALIFORNIA.</b></span>
-                <h1>Hotel of your dreams.</h1>
+                <span style="color: #fed136;font-size: 48px; font-family: Roboto;"><b>HOTEL CALIFORNIA</b></span>
+                <h1>Hotel of your dreams</h1>
                 <br>
                 <a href="/webreservations/create" class="btn btn-primary btn-lg" 
                 style="margin-top: 45px;" data-toggle="tooltip" 
-                title="Book that dream, right now!"><b>Book now!</b></a>
+                title="Book that dream, right now!"><b>Book now</b></a>
             </div>    
         </div>
     

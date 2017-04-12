@@ -42,7 +42,7 @@
     <div class="row">
         
         <div class="col-md-12 text-center page-header" style="margin-top: 0px;">
-            <h2>DIFFERENT CATEGORIES..</h2>
+            <h2>DIFFERENT CATEGORIES</h2>
         </div>  
         
     </div>
@@ -93,7 +93,7 @@
     <div class="row">
         
         <div class="col-md-12 text-center page-header" style="margin-top: 0px;">
-            <h2>MULTIPLE ACTIVITIES..</h2>
+            <h2>MULTIPLE ACTIVITIES</h2>
         </div> 
         
     </div>

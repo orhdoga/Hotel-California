@@ -49,7 +49,7 @@
                                 <a href="{{ url('/rooms/' . $room->id . '/edit') }}"><span class="btn btn-primary">Edit</span></a>
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <input type="submit" class="btn btn-danger" value="Delete">
+                                <button type="submit" class="btn btn-danger">Delete</button>
                             </form> 
                         </div>    
                     </td>

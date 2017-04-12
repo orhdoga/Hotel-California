@@ -12,4 +12,9 @@ class RoomCategory extends Model
     {
         return $this->hasMany(Room::class);
     }
+    
+    public function price()
+    {
+        return $this->hasOne(Price::class);
+    }
 }

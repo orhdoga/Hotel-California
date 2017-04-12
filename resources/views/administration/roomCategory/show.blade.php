@@ -48,7 +48,7 @@
                     
                     <tr>
                         <td><b>Price</b></td>
-                        <td>{{ $room_category->price_id }}</td>
+                        <td>${{ $room_category->price_id }}</td>
                     </tr>
                 
                 </table>

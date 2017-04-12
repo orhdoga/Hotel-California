@@ -73,8 +73,8 @@
         <div class="footer-bottom">
             <div class="container">
                 <p class="pull-left" style="color: white;">Copyright © <span style="color: #fed136;">Hotel California 2017.</span> All rights reserved.</p>
-                <audio controls autoplay loop style="margin-left: 10px;">
-                    <source src="Chillout-Music.mp3" type="audio/mpeg">
+                <audio autoplay loop style="margin-left: 10px;">
+                    <source src="songs/Rick-Roll.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                 </audio>
                 <div class="pull-right">

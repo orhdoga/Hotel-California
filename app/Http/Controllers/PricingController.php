@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Price;
+use App\RoomCategory;
 
 class PricingController extends Controller
 {
@@ -16,7 +16,8 @@ class PricingController extends Controller
     public function index()
     {
         return view('pricing', [
-            'prices' => Price::all()
+            'prices' => Price::all(),
+            'room_categories' => RoomCategory::all()
         ]);
     }
 
