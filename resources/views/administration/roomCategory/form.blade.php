@@ -52,10 +52,10 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="price_id">Price</label>
+                        <label for="price">Price</label>
                         <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input id="price_id" type="text" class="form-control" name="price_id" style="width: 60px;" value="{{ isset($room_category) ? $room_category->price_id : old('room_category') }}">
+                            <input id="price_id" type="text" class="form-control" name="price" style="width: 70px;" value="{{ isset($room_category) ? $room_category->price : old('room_category') }}">
                         </div>
                     </div>
                     

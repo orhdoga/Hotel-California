@@ -15,26 +15,26 @@ class RoomCategoriesTableSeeder extends Seeder
     {
         $single = new RoomCategory;
         $single->name = "Single room";
-        $single->description = "Working at Burger King";
+        $single->description = "A beautiful single room it is..";
         $single->amount_of_persons = 3;
-        $single->price_id = 40;
-        $single->cover_image = "Draven.jpg";
+        $single->price = 40;
+        $single->cover_image = "single-room.jpg";
         $single->save();   
         
         $double = new RoomCategory;
         $double->name = "Double room";
-        $double->description = "Working at Burger King";
+        $double->description = "A beautiful double room it is..";
         $double->amount_of_persons = 5;
-        $double->price_id = 80;
-        $double->cover_image = "Draven.jpg";        
+        $double->price = 80;
+        $double->cover_image = "double-room.jpg";        
         $double->save();
         
         $family = new RoomCategory;
         $family->name = "Family room";
-        $family->description = "Working at Burger King";
+        $family->description = "A beautiful family room it is..";
         $family->amount_of_persons = 7;
-        $family->price_id = 120;
-        $family->cover_image = "Draven.jpg";        
+        $family->price = 120;
+        $family->cover_image = "family-room.jpg";        
         $family->save();
     }
 }

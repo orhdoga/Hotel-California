@@ -48,7 +48,13 @@
                     
                     <tr>
                         <td><b>Price</b></td>
-                        <td>${{ $room_category->price_id }}</td>
+                        <td>
+                            @if($room_category->price($date))
+                                ${{ $room_category->price($date)->price }}
+                            @else
+                                ${{ $room_category->price }}
+                            @endif
+                        </td>
                     </tr>
                 
                 </table>

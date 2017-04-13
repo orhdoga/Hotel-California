@@ -50,6 +50,8 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('/pricing', 'PricingController@index');
     Route::post('/pricing', 'PricingController@store');
+    Route::get('/pricing/{price}/edit', 'PricingController@edit');
+    Route::patch('/pricing/{price}', 'PricingController@update');
     Route::delete('/pricing/{price}/delete', 'PricingController@destroy');
     
     Route::group(['prefix' => 'rooms'], function () { 

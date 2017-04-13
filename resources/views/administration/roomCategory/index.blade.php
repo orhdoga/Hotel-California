@@ -50,7 +50,9 @@
                     <td><img class="img-fluid" src="{{ '/images/' . $room_category->cover_image }}" style="height: 120px; width: 120px;"></td>
                     <td style="padding-top: 15px;">
                         @if($room_category->price($date))
-                            €{{ $room_category->price($date)->price }}
+                            ${{ $room_category->price($date)->price }}
+                        @else
+                            ${{ $room_category->price }}
                         @endif
                     </td>
                     <td>

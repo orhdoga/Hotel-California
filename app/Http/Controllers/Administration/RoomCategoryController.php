@@ -22,8 +22,8 @@ class RoomCategoryController extends Controller
     public function index()
     {
         return view('administration.roomCategory.index', [
-            'date' => Carbon::now(),
-            'room_categories' => RoomCategory::paginate(15)
+            'room_categories' => RoomCategory::paginate(15),
+            'date' => Carbon::now()            
         ]);
     }
 
@@ -72,7 +72,8 @@ class RoomCategoryController extends Controller
     public function show(RoomCategory $room_category)
     {
         return view('administration.roomCategory.show', [
-            'room_category' => $room_category   
+            'room_category' => $room_category,
+            'date' => Carbon::now()
         ]);
     }
 

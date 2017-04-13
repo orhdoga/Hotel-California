@@ -16,7 +16,7 @@ class PricingController extends Controller
      */
     public function index()
     {
-        return view('pricing', [
+        return view('pricing.index', [
             'prices' => Price::all(),
             'room_categories' => RoomCategory::all()
         ]);
@@ -91,9 +91,11 @@ class PricingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Price $price)
     {
-        //
+        return view('pricing.edit', compact('price'), [
+            'room_categories' => RoomCategory::all()    
+        ]);
     }
 
     /**
@@ -105,7 +107,16 @@ class PricingController extends Controller
      */
     public function update(Request $request, Price $price)
     {
-        //
+        $this->validate($request, [
+            'start' => 'required',
+            'end' => 'required',
+            'price' => 'required',
+            'room_category_id' => 'required'
+        ]);
+        
+        flash(e('You have successfully updated price period ' .  $price->id), 'info');
+        
+        return redirect('/pricing');
     }
 
     /**
