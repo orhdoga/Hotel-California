@@ -40,6 +40,13 @@ class PricingController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'start' => 'required',
+            'end' => 'required',
+            'price' => 'required',
+            'room_category_id' => 'required'
+        ]);
+        
         $room_category_id = $request->get('room_category_id');
         
         $start = Carbon::createFromFormat(
@@ -61,6 +68,8 @@ class PricingController extends Controller
         
         $room_category = RoomCategory::find($room_category_id);
         $room_category->prices()->create($data);
+        
+        flash(e('You have successfully created a new price period'), 'success');
         
         return back();
     }
@@ -96,12 +105,7 @@ class PricingController extends Controller
      */
     public function update(Request $request, Price $price)
     {
-        $price->update($request->all());
-        $price->save();
-        
-        flash('Tits');
-        
-        return back();
+        //
     }
 
     /**
@@ -110,8 +114,12 @@ class PricingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Price $price)
     {
-        //
+        $price->delete();
+        
+        flash(e('You have successfully deleted price period ' . $price->id), 'danger');
+        
+        return back();
     }
 }

@@ -63,6 +63,42 @@
                 
             </div>
             
+            <div class="col-md-6">
+                
+                <table class="table table-hover">
+                    
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Start</th>
+                            <th>End</th>
+                            <th>Price</th>
+                            <th></th>
+                        </th>
+                    </thead>
+                    
+                    <tbody>
+                        @foreach($prices as $price)
+                            <tr>
+                                <td style="padding-top: 15px;">{{ $price->id }}</td>
+                                <td style="padding-top: 15px;">{{ $price->start->toDateString() }}</td>
+                                <td style="padding-top: 15px;">{{ $price->end->toDateString() }}</td>
+                                <td style="padding-top: 15px;">${{ $price->price }}</td>
+                                <td>
+                                    <form method="POST" action="/pricing/{{ $price->id }}/delete">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>  
+                        @endforeach    
+                    </tbody>
+                    
+                </table>
+                
+            </div>
+            
         </div>
     
     </form>
