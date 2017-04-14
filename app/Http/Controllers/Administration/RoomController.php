@@ -20,7 +20,7 @@ class RoomController extends Controller
     public function index()
     {
         return view('administration.room.index', [
-            'rooms' => Room::with('room_category')->paginate(15)
+            'rooms' => Room::with('roomCategory')->paginate(15)
         ]);
     }
 
@@ -32,7 +32,7 @@ class RoomController extends Controller
     public function create()
     {
         return view('administration.room.form', [
-            'room_categories' => RoomCategory::all()  
+            'roomCategories' => RoomCategory::all()  
         ]);
     }
 
@@ -83,7 +83,7 @@ class RoomController extends Controller
     {
         return view('administration.room.form', [
             'room' => $room,
-            'room_categories' => RoomCategory::all()
+            'roomCategories' => RoomCategory::all()
         ]);
     }
 

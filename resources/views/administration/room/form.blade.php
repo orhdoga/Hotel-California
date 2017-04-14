@@ -44,11 +44,11 @@
                       
                         <div class="form-group">
                             <label>Room category</label>                            
-                            <select class="form-control" name="room_category_id" value="{{ isset($room) ? old('room_category_id', $room->room_category->id) : old('room_category_id') }}">
+                            <select class="form-control" name="room_category_id" value="{{ isset($room) ? old('room_category_id', $room->roomCategory->id) : old('room_category_id') }}">
                                 <option style="display: none" value="0">Attach a room category to a room</option>
-                                @foreach($room_categories as $room_category)
-                                    <option value="{{ $room_category->id }}" {{ isset($room) && old('room_category_id', $room->room_category->id) == $room_category->id ? 'selected' : '' }}>
-                                        {{ $room_category->name }}
+                                @foreach($roomCategories as $roomCategory)
+                                    <option value="{{ $roomCategory->id }}" {{ isset($room) && old('room_category_id', $room->roomCategory->id) == $roomCategory->id ? 'selected' : '' }}>
+                                        {{ $roomCategory->name }}
                                     </option>
                                 @endforeach 
                             </select>

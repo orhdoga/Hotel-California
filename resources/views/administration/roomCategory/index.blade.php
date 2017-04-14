@@ -39,26 +39,26 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($room_categories as $room_category)
+            @foreach($roomCategories as $roomCategory)
                 <tr>
-                    <td style="padding-top: 15px;">{{ $room_category->id }}</td>
+                    <td style="padding-top: 15px;">{{ $roomCategory->id }}</td>
                     <td style="padding-top: 15px;">
-                        <a href="{{ url('/roomcategories/' . $room_category->id) }}">{{ $room_category->name }}</a>
+                        <a href="{{ url('/roomcategories/' . $roomCategory->id) }}">{{ $roomCategory->name }}</a>
                     </td>
-                    <td style="padding-top: 15px; width: 200px; word-wrap: break-word;">{{ $room_category->description }}</td>
-                    <td style="padding-top: 15px;">{{ $room_category->amount_of_persons }}</td>                    
-                    <td><img class="img-fluid" src="{{ '/images/' . $room_category->cover_image }}" style="height: 120px; width: 120px;"></td>
+                    <td style="padding-top: 15px; width: 200px; word-wrap: break-word;">{{ $roomCategory->description }}</td>
+                    <td style="padding-top: 15px;">{{ $roomCategory->amount_of_persons }}</td>                    
+                    <td><img class="img-fluid" src="{{ '/images/' . $roomCategory->cover_image }}" style="height: 120px; width: 120px;"></td>
                     <td style="padding-top: 15px;">
-                        @if($room_category->price($date))
-                            ${{ $room_category->price($date)->price }}
+                        @if($roomCategory->price($date))
+                            ${{ $roomCategory->price($date)->price }}
                         @else
-                            ${{ $room_category->price }}
+                            ${{ $roomCategory->price }}
                         @endif
                     </td>
                     <td>
                         <div class="pull-right">
-                            <form method="POST" action="{{ url('/roomcategories/' . $room_category->id) }}">
-                                <a href="{{ url('/roomcategories/' . $room_category->id . '/edit') }}"><span class="btn btn-primary">Edit</span></a>
+                            <form method="POST" action="{{ url('/roomcategories/' . $roomCategory->id) }}">
+                                <a href="{{ url('/roomcategories/' . $roomCategory->id . '/edit') }}"><span class="btn btn-primary">Edit</span></a>
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <input type="submit" class="btn btn-danger" value="Delete">
@@ -72,7 +72,7 @@
     </table>
     
 <div class="pull-right">
-    {{ $room_categories->links() }}
+    {{ $roomCategories->links() }}
 </div>    
     
 </div>

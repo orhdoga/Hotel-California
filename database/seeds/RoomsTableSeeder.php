@@ -26,6 +26,6 @@ class RoomsTableSeeder extends Seeder
         $example3 = new Room;
         $example3->name = "Example3";
         $example3->room_category_id = 3;
-        $example->save();
+        $example3->save();
     }
 }

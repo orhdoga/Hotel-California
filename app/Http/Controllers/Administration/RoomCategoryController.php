@@ -22,7 +22,7 @@ class RoomCategoryController extends Controller
     public function index()
     {
         return view('administration.roomCategory.index', [
-            'room_categories' => RoomCategory::paginate(15),
+            'roomCategories' => RoomCategory::paginate(15),
             'date' => Carbon::now()            
         ]);
     }
@@ -43,21 +43,21 @@ class RoomCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, RoomCategoryStoreRequest $store, RoomCategory $room_category)
+    public function store(Request $request, RoomCategoryStoreRequest $store, RoomCategory $roomCategory)
     {
-        $room_category->fill($request->all());
+        $roomCategory->fill($request->all());
         
         if($request->hasFile('cover_image')) {
             $cover_image = $request->file('cover_image');
             $filename = time() . '.' . $cover_image->getClientOriginalExtension();
             $location = public_path('/images/' . $filename);
             Image::make($cover_image)->resize(120, 120)->save($location);
-            $room_category->cover_image = $filename;
+            $roomCategory->cover_image = $filename;
         }
         
-        $room_category->save();
+        $roomCategory->save();
         
-        flash(e('You have successfully created ' . $room_category->name), 'success');
+        flash(e('You have successfully created ' . $roomCategory->name), 'success');
         
         return redirect('/roomcategories');
     }
@@ -69,10 +69,10 @@ class RoomCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
      
-    public function show(RoomCategory $room_category)
+    public function show(RoomCategory $roomCategory)
     {
         return view('administration.roomCategory.show', [
-            'room_category' => $room_category,
+            'roomCategory' => $roomCategory,
             'date' => Carbon::now()
         ]);
     }
@@ -83,10 +83,10 @@ class RoomCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(RoomCategory $room_category)
+    public function edit(RoomCategory $roomCategory)
     {
         return view('administration.roomCategory.form', [
-            'room_category' => $room_category   
+            'roomCategory' => $roomCategory   
         ]);
     }
 
@@ -97,21 +97,21 @@ class RoomCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RoomCategoryUpdateRequest $update, RoomCategory $room_category)
+    public function update(Request $request, RoomCategoryUpdateRequest $update, RoomCategory $roomCategory)
     {
-        $room_category->update($request->all());
+        $roomCategory->update($request->all());
         
         if($request->hasFile('cover_image')) {
             $cover_image = $request->file('cover_image');
             $filename = time() . '.' . $cover_image->getClientOriginalExtension();
             $location = public_path('/images/' . $filename);
             Image::make($cover_image)->resize(120, 120)->save($location);
-            $room_category->cover_image = $filename;
+            $roomCategory->cover_image = $filename;
         }
         
-        $room_category->save();
+        $roomCategory->save();
         
-        flash(e('You have successfully updated ' . $room_category->name), 'info');
+        flash(e('You have successfully updated ' . $roomCategory->name), 'info');
         
         return redirect('/roomcategories');
     }
@@ -122,11 +122,11 @@ class RoomCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RoomCategory $room_category)
+    public function destroy(RoomCategory $roomCategory)
     {
-        $room_category->delete();
+        $roomCategory->delete();
         
-        flash(e('You have successfully deleted ' . $room_category->name), 'danger');
+        flash(e('You have successfully deleted ' . $roomCategory->name), 'danger');
         
         return redirect('/roomcategories');
     }

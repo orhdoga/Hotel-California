@@ -7,7 +7,7 @@
     <div class="row">
         
         <div class="col-md-6">
-            <h1>Room category {{ $room_category->name }}</h1>
+            <h1>Room category {{ $roomCategory->name }}</h1>
             <hr>
         </div>
         
@@ -23,36 +23,36 @@
                     
                     <tr>
                         <td><b>Id</b></td>
-                        <td>{{ $room_category->id }}</td>
+                        <td>{{ $roomCategory->id }}</td>
                     </tr>
                     
                     <tr>
                         <td><b>Room category</b></td>
-                        <td>{{ $room_category->name }}</td>
+                        <td>{{ $roomCategory->name }}</td>
                     </tr>
                     
                     <tr>
                         <td><b>Description</b></td>
-                        <td>{{ $room_category->description }}</td>
+                        <td>{{ $roomCategory->description }}</td>
                     </tr>
                 
                     <tr>
                         <td><b>Cover image</b></td>
-                        <td><img src="{{ '/images/' . $room_category->cover_image }}" style="height: 120px; width: 120px;"></td>
+                        <td><img src="{{ '/images/' . $roomCategory->cover_image }}" style="height: 120px; width: 120px;"></td>
                     </tr>
                     
                     <tr>
                         <td><b>Persons</b></td>
-                        <td>{{ $room_category->amount_of_persons }}</td>
+                        <td>{{ $roomCategory->amount_of_persons }}</td>
                     </tr>
                     
                     <tr>
                         <td><b>Price</b></td>
                         <td>
-                            @if($room_category->price($date))
-                                ${{ $room_category->price($date)->price }}
+                            @if($roomCategory->price($date))
+                                ${{ $roomCategory->price($date)->price }}
                             @else
-                                ${{ $room_category->price }}
+                                ${{ $roomCategory->price }}
                             @endif
                         </td>
                     </tr>

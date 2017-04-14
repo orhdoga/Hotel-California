@@ -20,11 +20,13 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function () {
     
     Route::resource('roomcategories', 'Administration\RoomCategoryController', ['parameters' => [
-        'roomcategories' => 'room_category'    
+        'roomcategories' => 'roomCategory'    
     ]]);
+    
     Route::resource('pricing', 'PricingController', ['except' => [
         'create', 'show'
     ]]);
+    
     Route::resource('rooms', 'Administration\RoomController');
     
     Route::group(['prefix' => 'webreservations'], function () { 
