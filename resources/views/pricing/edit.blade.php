@@ -7,13 +7,13 @@
     <div class="row">
         
         <div class="col-md-6">
-            <h1 style="display: inline-block;">Period {{ $price->id }} edit</h1>
+            <h1 style="display: inline-block;">Period {{ $pricing->id }} edit</h1>
             <hr>
         </div>
         
     </div>
     
-    <form method="POST" action="{{ url('/pricing/' . $price->id) }}">
+    <form method="POST" action="{{ url('/pricing/' . $pricing->id) }}">
         {{ csrf_field() }}    
         {{ method_field('PATCH') }}
     
@@ -36,7 +36,9 @@
                     <select class="form-control" name="room_category_id">
                         <option style="display: none" value="">Choose a room category</option>
                         @foreach($room_categories as $room_category)
-                            <option value="{{ $room_category->id }}">{{ $room_category->name }}</option>
+                            <option value="{{ $room_category->id }}" {{ isset($pricing) && old('room_category_id', $pricing->room_category->id) == $room_category->id ? 'selected' : '' }}>
+                                {{ $room_category->name }}          
+                            </option>
                         @endforeach
                     </select>
                 </div>
@@ -45,7 +47,7 @@
                     <label for="price">Price</label>
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input id="price" type="text" class="form-control" name="price" style="width: 70px;" value="{{ isset($price) ? $price->price : '' }}">
+                        <input id="price" type="text" class="form-control" name="price" style="width: 70px;" value="{{ isset($pricing) ? old('price', $pricing->price) : old('price') }}">
                     </div>
                 </div>
                         

@@ -89,7 +89,7 @@
                             <td style="padding-top: 15px;">{{ $price->room_category_id }}</td>
                             <td style="padding-top: 15px;">${{ $price->price }}</td>
                             <td>
-                                <form method="POST" action="/pricing/{{ $price->id }}/delete">
+                                <form method="POST" action="/pricing/{{ $price->id }}">
                                     <a href="/pricing/{{ $price->id }}/edit" type="submit" class="btn btn-primary">Edit</a>
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}

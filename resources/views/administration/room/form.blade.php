@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -46,7 +47,7 @@
                             <select class="form-control" name="room_category_id" value="{{ isset($room) ? old('room_category_id', $room->room_category->id) : old('room_category_id') }}">
                                 <option style="display: none" value="0">Attach a room category to a room</option>
                                 @foreach($room_categories as $room_category)
-                                    <option value="{{ $room_category->id }}" @if(isset($room) && old('room_category_id', $room->room_category->id) == $room_category->id) selected @endif>
+                                    <option value="{{ $room_category->id }}" {{ isset($room) && old('room_category_id', $room->room_category->id) == $room_category->id ? 'selected' : '' }}>
                                         {{ $room_category->name }}
                                     </option>
                                 @endforeach 

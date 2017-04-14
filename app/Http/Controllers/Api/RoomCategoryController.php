@@ -9,7 +9,7 @@ use App\RoomCategory;
 
 class RoomCategoryController extends Controller
 {
-    public function get() {
+    public function index() {
         return RoomCategory::all();
     }
 }

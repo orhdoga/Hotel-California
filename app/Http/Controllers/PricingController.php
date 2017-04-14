@@ -91,9 +91,9 @@ class PricingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Price $price)
+    public function edit(Price $pricing)
     {
-        return view('pricing.edit', compact('price'), [
+        return view('pricing.edit', compact('pricing'), [
             'room_categories' => RoomCategory::all()    
         ]);
     }
@@ -105,7 +105,7 @@ class PricingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Price $price)
+    public function update(Request $request, Price $pricing)
     {
         $this->validate($request, [
             'start' => 'required',
@@ -114,7 +114,7 @@ class PricingController extends Controller
             'room_category_id' => 'required'
         ]);
         
-        flash(e('You have successfully updated price period ' .  $price->id), 'info');
+        flash(e('You have successfully updated price period ' .  $pricing->id), 'info');
         
         return redirect('/pricing');
     }
@@ -125,11 +125,11 @@ class PricingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Price $price)
+    public function destroy(Price $pricing)
     {
-        $price->delete();
+        $pricing->delete();
         
-        flash(e('You have successfully deleted price period ' . $price->id), 'danger');
+        flash(e('You have successfully deleted price period ' . $pricing->id), 'danger');
         
         return back();
     }

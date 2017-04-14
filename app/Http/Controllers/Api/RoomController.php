@@ -9,7 +9,7 @@ use App\Room;
 
 class RoomController extends Controller
 {
-    public function get() {
+    public function index() {
         return Room::all(); 
     }
 }

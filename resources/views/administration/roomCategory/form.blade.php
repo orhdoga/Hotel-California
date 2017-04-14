@@ -38,24 +38,24 @@
                     <div class="form-group">
                         <label for="room_category">Room category</label>
                         <input id="room_category" type="text" class="form-control" name="name" placeholder="Enter a name"
-                        value="{{ isset($room_category) ? $room_category->name : old('room_category') }}">
+                        value="{{ isset($room_category) ? old('name', $room_category->name) : old('name') }}">
                     </div> 
                     
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea id="description" type="text" class="form-control" name="description" rows="2" placeholder="Enter a description">{{ isset($room_category) ? $room_category->description : old('room_category') }}</textarea>
+                        <textarea id="description" type="text" class="form-control" name="description" rows="2" placeholder="Enter a description">{{ isset($room_category) ? old('description', $room_category->description) : old('description') }}</textarea>
                     </div>
                     
                     <div class="form-group">
                         <label for="amount_of_persons">Amount of persons</label>
-                        <input id="amount_of_persons" type="text" class="form-control" name="amount_of_persons" style="width: 45px;" value="{{ isset($room_category) ? $room_category->amount_of_persons : old('room_category') }}">
+                        <input id="amount_of_persons" type="text" class="form-control" name="amount_of_persons" style="width: 45px;" value="{{ isset($room_category) ? old('amount_of_persons', $room_category->amount_of_persons) : old('amount_of_persons') }}">
                     </div>
                     
                     <div class="form-group">
                         <label for="price">Price</label>
                         <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input id="price_id" type="text" class="form-control" name="price" style="width: 70px;" value="{{ isset($room_category) ? $room_category->price : old('room_category') }}">
+                            <input id="price_id" type="text" class="form-control" name="price" style="width: 70px;" value="{{ isset($room_category) ? old('price', $room_category->price) : old('price') }}">
                         </div>
                     </div>
                     
